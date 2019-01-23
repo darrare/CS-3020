@@ -10,6 +10,8 @@ namespace ExampleProject
     class Car
     {
         CarState state = CarState.On;
+        public string engine;
+        public float gasPercentage = 0;
 
         public Car()
         {
