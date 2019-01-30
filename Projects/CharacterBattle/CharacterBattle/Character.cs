@@ -22,16 +22,24 @@ namespace CharacterBattle
             Health = health;
             Position = position;
             Priority = priority;
+            this.range = range;
         }
+
+        public string GetMovementAttackDescription()
+        {
+            return "(Max movement = " + moveSpeed + ". Attack range = " + range + ". Damage = " + damagePerAttack + ")";
+        }
+
+        public abstract string GetSpecialDescription();
 
         public void TakeDamage(int amount)
         {
             Health -= amount;
         }
 
-        public bool Move(int distance)
+        public bool Move(int distance, bool force = false)
         {
-            if (Math.Abs(distance) > moveSpeed)
+            if (Math.Abs(distance) > moveSpeed && !force)
             {
                 return false;
             }
@@ -50,14 +58,16 @@ namespace CharacterBattle
             return true;
         }
 
-        public void Attack(Character target)
+        public bool Attack(Character target)
         {
             if (Math.Abs(Position - target.Position) <= range)
             {
                 target.TakeDamage(damagePerAttack);
+                return true;
             }
+            return false;
         }
 
-        public abstract void Special(Character target);
+        public abstract string Special(Character target);
     }
 }
