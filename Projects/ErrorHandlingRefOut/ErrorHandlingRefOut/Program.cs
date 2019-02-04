@@ -10,7 +10,11 @@ namespace ErrorHandlingRefOut
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new Currency(5, 4, 3));
+            Fahrenheit f = new Fahrenheit(100);
+            Celsius c = (Celsius)f;
+
+            Celsius c2 = new Celsius(100);
+            Fahrenheit f2 = c2;
 
             return;
             int userInput = 0;
