@@ -10,23 +10,17 @@ namespace ErrorHandlingRefOut
     {
         static void Main(string[] args)
         {
-            Fahrenheit f = new Fahrenheit(100);
-            Celsius c = (Celsius)f;
-
-            Celsius c2 = new Celsius(100);
-            Fahrenheit f2 = c2;
-
-            return;
             int userInput = 0;
             do
             {
-                userInput = Menu(userInput);
+                Menu(ref userInput);
             } while (userInput != 4);
             Console.WriteLine("Thanks for using the program");
         }
 
-        static int Menu(int userInput)
+        static int Menu(ref int userInput)
         {
+            Start:
             Console.WriteLine("--------------------------------------");
             Console.WriteLine("Please enter an input for the command you want to issue.");
             Console.WriteLine("1. Do something with 2 integers.");
@@ -35,7 +29,12 @@ namespace ErrorHandlingRefOut
             Console.WriteLine("4. Terminate program");
             Console.WriteLine("--------------------------------------");
 
-            userInput = int.Parse(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out userInput))
+            {
+                Console.WriteLine("You have entered invalid input. Please try again.");
+                goto Start;
+            }
+            
 
             switch (userInput)
             {
