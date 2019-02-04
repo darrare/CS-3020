@@ -10,6 +10,9 @@ namespace ErrorHandlingRefOut
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(new Currency(5, 4, 3));
+
+            return;
             int userInput = 0;
             do
             {
