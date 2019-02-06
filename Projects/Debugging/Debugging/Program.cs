@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Debugging
 {
@@ -14,13 +15,13 @@ namespace Debugging
             int userInput = 0;
             do
             {
-                //hello world
                 Console.WriteLine("------------------------------------------------------------------");
                 Console.WriteLine("Please enter an integer value for the action you want to perform.");
                 Console.WriteLine("1. Print all multiples of 3 or 5 between selected values.");
                 Console.WriteLine("2. Create an array of n random integers.");
                 Console.WriteLine("3. Convert Fahrenheit to Celsius.");
-                Console.WriteLine("4. End the program");
+                Console.WriteLine("4. Read a file and figure out how much money is there.");
+                Console.WriteLine("5. End the program");
                 Console.WriteLine("------------------------------------------------------------------");
 
                 userInput = int.Parse(Console.ReadLine());
@@ -44,12 +45,16 @@ namespace Debugging
                         ConvertFahrenheitToCelsius(fahrenheit);
                         break;
                     case 4:
+                        Console.WriteLine("Reading file to find out how much money is listed in it.");
+                        FromFileSumCurrency();
+                        break;
+                    case 5:
                         Console.WriteLine("Thanks for using the program.");
                         break;
                     default:
                         break;
                 }
-            } while (userInput != 4);
+            } while (userInput != 5);
         }
 
         /// <summary>
@@ -99,6 +104,45 @@ namespace Debugging
             float modifer = (5 / 9);
             float celsius = (fahrenheit - 32) * modifer;
             Console.WriteLine(celsius + " degrees celsius.");
+        }
+
+        /// <summary>
+        /// Reads a file with input:
+        /// 
+        /// QUARTER=31
+        /// DIME=5
+        /// NICKEL=2
+        /// DIME=7
+        /// HALFDOLLAR=0
+        /// BUBBLES=10
+        /// PENNY=157
+        /// 
+        /// Program should open file and calculate the value of the currency.
+        /// Any name stated twice (dime in the above example) should be added together and both considered to the ultimate sum.
+        /// Any name that is an invalid coin (bubbles in the above example) should be completely ignored.
+        /// </summary>
+        static void FromFileSumCurrency()
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "Prob01.in.txt";
+            List<string> lines = new List<string>();
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string line;
+                while((line = sr.ReadLine()) != null)
+                {
+                    lines.Add(line);
+                }
+            }
+
+            Dictionary<string, float> currency = new Dictionary<string, float>();
+            currency.Add("HALFDOLLAR", lines.Sum(t => t.Contains("HALFDOLLAR") ? float.Parse(t.Substring(11)) * .5f : 0));
+            currency.Add("QUARTER", lines.Sum(t => t.Contains("QUARTER") ? float.Parse(t.Substring(8)) * .25f : 0));
+            currency.Add("DIME", lines.Sum(t => t.Contains("DIME") ? float.Parse(t.Substring(5)) * .1f : 0));
+            currency.Add("NICKEL", lines.Sum(t => t.Contains("NICKEL") ? float.Parse(t.Substring(7)) * .05f : 0));
+            currency.Add("PENNY", lines.Sum(t => t.Contains("PENNY") ? float.Parse(t.Substring(6)) * .01f : 0));
+
+            //Output should be formated to 2 decimal places = $260.30
+            Console.WriteLine("Total currency = $" + currency.Sum(t => t.Value).ToString("0.00"));
         }
     }
 }
