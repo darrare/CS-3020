@@ -21,7 +21,9 @@ namespace Debugging
                 Console.WriteLine("2. Create an array of n random integers.");
                 Console.WriteLine("3. Convert Fahrenheit to Celsius.");
                 Console.WriteLine("4. Read a file and figure out how much money is there.");
-                Console.WriteLine("5. End the program");
+                Console.WriteLine("5. Adds the values of two user inputs.");
+                Console.WriteLine("6. Censors a string read from a file with ******.");
+                Console.WriteLine("7. End the program");
                 Console.WriteLine("------------------------------------------------------------------");
 
                 userInput = int.Parse(Console.ReadLine());
@@ -49,12 +51,23 @@ namespace Debugging
                         FromFileSumCurrency();
                         break;
                     case 5:
+                        Console.WriteLine("Input the first integer you want to add: ");
+                        int first = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Input the second integer you want to add: ");
+                        int second = int.Parse(Console.ReadLine());
+                        AddIntegers(first, second);
+                        break;
+                    case 6:
+                        Console.WriteLine("Censoring string read from file.");
+                        CensorStringReadFromFile();
+                        break;
+                    case 7:
                         Console.WriteLine("Thanks for using the program.");
                         break;
                     default:
                         break;
                 }
-            } while (userInput != 5);
+            } while (userInput != 7);
         }
 
         /// <summary>
@@ -150,6 +163,74 @@ namespace Debugging
 
             //Output should be formated to 2 decimal places = $260.30
             Console.WriteLine("Total currency = $" + currency.Sum(t => t.Value).ToString("0.##"));
+        }
+
+        /// <summary>
+        /// Adds two integers and prints out the result
+        /// </summary>
+        /// <param name="first">First int to add</param>
+        /// <param name="second">Second int to add</param>
+        static void AddIntegers(int first, int second)
+        {
+            Console.WriteLine("The value of " + first + " + " + second + " = " + first + second);
+        }
+
+        /// <summary>
+        /// Reads file Prob02.in.txt and censors "bad" words with *****
+        /// </summary>
+        static void CensorStringReadFromFile()
+        {
+            //Reads in a file Prob02.in.txt
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"\\Prob02.in.txt";
+
+            //Creates a list to store each line of the file
+            List<string> lines = new List<string>();
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string line;
+                //As long as lines remain, continue adding them
+                while ((line = sr.ReadLine()) != null)
+                {
+                    lines.Add(line);
+                }
+            }
+
+            //Print out the lines prior to censorship
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+
+            //Create an array of censored words
+            string[] censorWords = new string[] { "Never", "lie", "rules"};
+
+            //Censor every word
+            for(int i = 0; i < lines.Count; i++)
+            {
+                foreach (string censor in censorWords)
+                {
+                    string blocked = "";
+                    for (int j = 0; j < censor.Length; j++)
+                        blocked += "*";
+
+                    //replace the word with the censor
+                    lines[i].Replace(censor, blocked);
+                }
+            }
+
+            //Add some spaces between the raw text vs censored text
+            int count = 5;
+            do
+            {
+                Console.WriteLine();
+                count++;
+            } while (count > 0);
+
+            //Print out the lines after censorship
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }
