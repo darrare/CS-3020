@@ -107,7 +107,7 @@ namespace Debugging
         }
 
         /// <summary>
-        /// Reads a file with input:
+        /// Reads a file with an input similar to:
         /// 
         /// QUARTER=31
         /// DIME=5
@@ -123,26 +123,33 @@ namespace Debugging
         /// </summary>
         static void FromFileSumCurrency()
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + "Prob01.in.txt";
+            //Reads in a file Prob01.in.txt
+            string path = AppDomain.CurrentDomain.BaseDirectory + "\\Prob01.in.txt";
+
+            //Creates a list to store each line of the file
             List<string> lines = new List<string>();
             using (StreamReader sr = new StreamReader(path))
             {
                 string line;
-                while((line = sr.ReadLine()) != null)
+                //As long as lines remain, continue adding them
+                while((line = sr.ReadLine()) == null)
                 {
                     lines.Add(line);
                 }
             }
 
+            //Create a dictionary to store values
             Dictionary<string, float> currency = new Dictionary<string, float>();
-            currency.Add("HALFDOLLAR", lines.Sum(t => t.Contains("HALFDOLLAR") ? float.Parse(t.Substring(11)) * .5f : 0));
-            currency.Add("QUARTER", lines.Sum(t => t.Contains("QUARTER") ? float.Parse(t.Substring(8)) * .25f : 0));
-            currency.Add("DIME", lines.Sum(t => t.Contains("DIME") ? float.Parse(t.Substring(5)) * .1f : 0));
-            currency.Add("NICKEL", lines.Sum(t => t.Contains("NICKEL") ? float.Parse(t.Substring(7)) * .05f : 0));
-            currency.Add("PENNY", lines.Sum(t => t.Contains("PENNY") ? float.Parse(t.Substring(6)) * .01f : 0));
+
+            //For each possible type of coin, sum every line containing that coin and turn it into dollar format (half dollar = .5 dollars)
+            currency.Add("HALFDOLLAR", lines.Sum(t => t.Contains("HALFDOLLAR") ? float.Parse(t.Substring(10)) * .5f : 0));
+            currency.Add("QUARTER", lines.Sum(t => t.Contains("QUARTER") ? float.Parse(t.Substring(7)) * .25f : 0));
+            currency.Add("DIME", lines.Sum(t => t.Contains("DIME") ? float.Parse(t.Substring(4)) * .1f : 0));
+            currency.Add("NICKEL", lines.Sum(t => t.Contains("NICKEL") ? float.Parse(t.Substring(6)) * .5f : 0));
+            currency.Add("PENNY", lines.Sum(t => t.Contains("PENNY") ? float.Parse(t.Substring(5)) * .1f : 0));
 
             //Output should be formated to 2 decimal places = $260.30
-            Console.WriteLine("Total currency = $" + currency.Sum(t => t.Value).ToString("0.00"));
+            Console.WriteLine("Total currency = $" + currency.Sum(t => t.Value).ToString("0.##"));
         }
     }
 }
