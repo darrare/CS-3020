@@ -9,11 +9,6 @@ namespace LINQandLambda
         static Random rand = new Random(1234);
         static void Main(string[] args)
         {
-            Console.WriteLine(@"Hello\n");
-            Console.WriteLine("World");
-
-
-
             List<int> integers = ResetListInt();
 
             #region Randomly sort integers (.OrderBy)
@@ -77,9 +72,8 @@ namespace LINQandLambda
             {
                 integers.Add(otherIntegers[i]);
             }
-
+            //Integers now contains all values from both lists
             #endregion
-
         }
 
         static List<int> ResetListInt()

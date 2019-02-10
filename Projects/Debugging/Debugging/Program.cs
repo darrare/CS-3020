@@ -151,15 +151,57 @@ namespace Debugging
                 }
             }
 
-            //Create a dictionary to store values
-            Dictionary<string, float> currency = new Dictionary<string, float>();
+            //float total = 0;
+            //foreach(string s in lines)
+            //{
+            //    if (s.Contains("HALFDOLLAR"))
+            //        total += float.Parse(s.Substring(10)) * .5f;
+            //    else if (s.Contains("QUARTER"))
+            //        total += float.Parse(s.Substring(7)) * .25f;
+            //    else if (s.Contains("DIME"))
+            //        total += float.Parse(s.Substring(4)) * .1f;
+            //    else if (s.Contains("NICKEL"))
+            //        total += float.Parse(s.Substring(6)) * .05f;
+            //    else if (s.Contains("PENNY"))
+            //        total += float.Parse(s.Substring(5)) * .01f;
+            //}
 
-            //For each possible type of coin, sum every line containing that coin and turn it into dollar format (half dollar = .5 dollars)
-            currency.Add("HALFDOLLAR", lines.Sum(t => t.Contains("HALFDOLLAR") ? float.Parse(t.Substring(10)) * .5f : 0));
-            currency.Add("QUARTER", lines.Sum(t => t.Contains("QUARTER") ? float.Parse(t.Substring(7)) * .25f : 0));
-            currency.Add("DIME", lines.Sum(t => t.Contains("DIME") ? float.Parse(t.Substring(4)) * .1f : 0));
-            currency.Add("NICKEL", lines.Sum(t => t.Contains("NICKEL") ? float.Parse(t.Substring(6)) * .5f : 0));
-            currency.Add("PENNY", lines.Sum(t => t.Contains("PENNY") ? float.Parse(t.Substring(5)) * .1f : 0));
+            //Create a dictionary to store values
+            Dictionary<string, float> currency = new Dictionary<string, float>()
+            {
+                //For each possible type of coin, sum every line containing that coin and turn it into dollar format
+                {"HALFDOLLAR", lines.Sum(t => t.Contains("HALFDOLLAR") ? float.Parse(t.Substring(10)) * .5f : 0) },
+                {"QUARTER", lines.Sum(t => t.Contains("QUARTER") ? float.Parse(t.Substring(7)) * .25f : 0) },
+                {"DIME", lines.Sum(t => t.Contains("DIME") ? float.Parse(t.Substring(4)) * .1f : 0) },
+                {"NICKEL", lines.Sum(t => t.Contains("NICKEL") ? float.Parse(t.Substring(6)) * .5f : 0) },
+                { "PENNY", lines.Sum(t => t.Contains("PENNY") ? float.Parse(t.Substring(5)) * .1f : 0) },
+            };
+
+            //float total = lines.Sum(t =>
+            //    t.Contains("HALFDOLLAR") ? float.Parse(t.Substring(10)) * .5f :
+            //    t.Contains("QUARTER") ? float.Parse(t.Substring(7)) * .25f :
+            //    t.Contains("DIME") ? float.Parse(t.Substring(7)) * .1f :
+            //    t.Contains("NICKEL") ? float.Parse(t.Substring(7)) * .05f :
+            //    t.Contains("PENNY") ? float.Parse(t.Substring(7)) * .01f : 
+            //    0);
+
+            //Dictionary<string, float> currency = new Dictionary<string, float>()
+            //{
+            //    { "HALFDOLLAR", (from t in lines select t.Contains("HALFDOLLAR") ? float.Parse(t.Substring(10)) * .5f : 0).Sum()  },
+            //    {"QUARTER", (from t in lines select t.Contains("QUARTER") ? float.Parse(t.Substring(7)) * .25f : 0).Sum() },
+            //    {"DIME", (from t in lines select t.Contains("DIME") ? float.Parse(t.Substring(4)) * .1f : 0).Sum() },
+            //    {"NICKEL", (from t in lines select t.Contains("NICKEL") ? float.Parse(t.Substring(6)) * .5f : 0).Sum() },
+            //    { "PENNY", (from t in lines select t.Contains("PENNY") ? float.Parse(t.Substring(5)) * .1f : 0).Sum() },
+            //};
+
+            float total = (from t in lines select
+                t.Contains("HALFDOLLAR") ? float.Parse(t.Substring(10)) * .5f :
+                t.Contains("QUARTER") ? float.Parse(t.Substring(10)) * .25f :
+                t.Contains("DIME") ? float.Parse(t.Substring(10)) * .10f :
+                t.Contains("NICKEL") ? float.Parse(t.Substring(10)) * .05f :
+                t.Contains("PENNY") ? float.Parse(t.Substring(10)) * .01f : 
+                0).Sum();
+
 
             //Output should be formated to 2 decimal places = $260.30
             Console.WriteLine("Total currency = $" + currency.Sum(t => t.Value).ToString("0.##"));
