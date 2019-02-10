@@ -9,6 +9,13 @@ namespace GenericsAndInterfaces
     class Program
     {
         static Random rand = new Random(8675309);
+        //The above seed produces a tree that looks like the following when adding integers
+        /*             75
+         *       57         99
+         *    50    65    93
+         *  6      58       98
+         *   20
+         */
         static void Main(string[] args)
         {
             BinaryTree t = new BinaryTree();
@@ -17,15 +24,9 @@ namespace GenericsAndInterfaces
                 t.Insert(rand.Next(0, 100));
             }
 
-            t.PreOrderPrint();
-            t.InOrderPrint();
-            t.PostOrderPrint();
+            //Do debugging here
 
-            while(true)
-            {
-                int input = int.Parse(Console.ReadLine());
-                t.Remove(input);
-            }
+
             
         }
     }

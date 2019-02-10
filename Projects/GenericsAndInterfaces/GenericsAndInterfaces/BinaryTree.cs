@@ -51,7 +51,8 @@ namespace GenericsAndInterfaces
         /// <summary>
         /// Number of nodes in the tree
         /// </summary>
-        public int NodeCount { get; private set; } = 0;
+        public int NodeCount
+        { get { return Root != null ? CalculateNodeCount(Root) : 0; } }
 
         /// <summary>
         /// Constructor for Binary Tree
@@ -135,7 +136,6 @@ namespace GenericsAndInterfaces
                     else
                     {
                         cur.LeftChild = new BinaryTreeNode(element);
-                        NodeCount++;
                         return;
                     }
                 }
@@ -150,7 +150,6 @@ namespace GenericsAndInterfaces
                     else
                     {
                         cur.RightChild = new BinaryTreeNode(element);
-                        NodeCount++;
                         return;
                     }
                 }
@@ -192,7 +191,7 @@ namespace GenericsAndInterfaces
                 //Handle nodes with only one child
                 if (cur.LeftChild == null)
                     return cur.RightChild;
-                else if (Root.RightChild == null)
+                else if (cur.RightChild == null)
                     return cur.LeftChild;
 
                 //Handle nodes with two children
@@ -283,5 +282,18 @@ namespace GenericsAndInterfaces
             InOrderPrint(n.RightChild);
         }
         #endregion
+
+        /// <summary>
+        /// Only accessed from NodeCount property. Gets the number of nodes in the tree recursively
+        /// </summary>
+        /// <param name="n">Node to count</param>
+        /// <returns>Number of nodes int he tree</returns>
+        private int CalculateNodeCount(BinaryTreeNode n)
+        {
+            if (n == null)
+                return 0;
+
+            return 1 + CalculateNodeCount(n.LeftChild) + CalculateNodeCount(n.RightChild);
+        }
     }
 }
