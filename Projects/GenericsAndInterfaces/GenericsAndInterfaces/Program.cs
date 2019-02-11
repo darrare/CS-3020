@@ -18,7 +18,7 @@ namespace GenericsAndInterfaces
          */
         static void Main(string[] args)
         {
-            BinaryTree t = new BinaryTree();
+            BinaryTree<int> t = new BinaryTree<int>();
             for(int i = 0; i < 10; i++)
             {
                 t.Insert(rand.Next(0, 100));
@@ -26,8 +26,21 @@ namespace GenericsAndInterfaces
 
             //Do debugging here
 
+            BinaryTree<Person> peopleTree = new BinaryTree<Person>();
+            for (int i = 0; i < 10; i++)
+            {
+                peopleTree.Insert(new Person("person" + i, (float)rand.NextDouble() * 100 + 100, (float)rand.NextDouble() * 40 + 50));
+            }
 
-            
+            Console.WriteLine("10 people randomly created and added to the tree. Compared by height.");
+
+            Console.WriteLine("Pre Order Print");
+            peopleTree.PreOrderPrint();
+            Console.WriteLine("\nIn Order Print");
+            peopleTree.InOrderPrint();
+            Console.WriteLine("\nPost Order Print");
+            peopleTree.PostOrderPrint();
+
         }
     }
 }

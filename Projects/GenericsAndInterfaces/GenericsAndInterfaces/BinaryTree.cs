@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace GenericsAndInterfaces
 {
-    class BinaryTree
+    class BinaryTree<T> where T : IComparable
     {
         /// <summary>
         /// BinaryTreeNode class interal to BinaryTree class
         /// because no other class needs to access BinaryTreeNode
         /// </summary>
-        class BinaryTreeNode
+        class BinaryTreeNode<T> where T : IComparable
         {
-            public int Data { get; set; } = 0;
-            public BinaryTreeNode LeftChild { get; set; }
-            public BinaryTreeNode RightChild { get; set; }
+            public T Data { get; set; }
+            public BinaryTreeNode<T> LeftChild { get; set; }
+            public BinaryTreeNode<T> RightChild { get; set; }
 
             /// <summary>
             /// BinaryTreeNode constructor
             /// </summary>
             /// <param name="element">Data held by node</param>
-            public BinaryTreeNode(int element)
+            public BinaryTreeNode(T element)
             {
                 Data = element;
             }
@@ -40,7 +40,7 @@ namespace GenericsAndInterfaces
         /// <summary>
         /// Root of the tree
         /// </summary>
-        BinaryTreeNode Root { get; set; }
+        BinaryTreeNode<T> Root { get; set; }
 
         /// <summary>
         /// Height of the tree from Root
@@ -68,17 +68,17 @@ namespace GenericsAndInterfaces
         /// </summary>
         /// <param name="element">The data we are looking for</param>
         /// <returns>True if we find the data, false otherwise</returns>
-        public bool Search(int element)
+        public bool Search(T element)
         {
             if (Root == null)
                 return false;
 
             //Go to a maximum of Height to search for element
-            BinaryTreeNode cur = Root;
+            BinaryTreeNode<T> cur = Root;
             for (int i = 0; i <= Height; i++)
             {
                 //If element is less than or equal to cur, put element on left side
-                if (element < cur.Data)
+                if (element.CompareTo(cur.Data) <= 0)
                 {
                     if (cur.LeftChild != null)
                     {
@@ -89,7 +89,7 @@ namespace GenericsAndInterfaces
                         return false;
                 }
                 //If element is greater than to cur, put element on right side
-                else if (element > cur.Data)
+                else if (element.CompareTo(cur.Data) == 1)
                 {
                     if (cur.RightChild != null)
                     {
@@ -112,21 +112,21 @@ namespace GenericsAndInterfaces
         /// Non-recursively inserts element into the tree. O(n) - O(logn)
         /// </summary>
         /// <param name="element">The data we want to insert into the tree</param>
-        public void Insert(int element)
+        public void Insert(T element)
         {
             //If no elements in the tree, set new element to root
             if (Root == null)
             {
-                Root = new BinaryTreeNode(element);
+                Root = new BinaryTreeNode<T>(element);
                 return;
             }
 
             //Go to a maximum of Height to insert new element
-            BinaryTreeNode cur = Root;
+            BinaryTreeNode<T> cur = Root;
             for(int i = 0; i <= Height; i++)
             {
                 //If element is less than or equal to cur, put element on left side
-                if (element <= cur.Data)
+                if (element.CompareTo(cur.Data) <= 0)
                 {
                     if (cur.LeftChild != null)
                     {
@@ -135,7 +135,7 @@ namespace GenericsAndInterfaces
                     }
                     else
                     {
-                        cur.LeftChild = new BinaryTreeNode(element);
+                        cur.LeftChild = new BinaryTreeNode<T>(element);
                         return;
                     }
                 }
@@ -149,7 +149,7 @@ namespace GenericsAndInterfaces
                     }
                     else
                     {
-                        cur.RightChild = new BinaryTreeNode(element);
+                        cur.RightChild = new BinaryTreeNode<T>(element);
                         return;
                     }
                 }
@@ -160,7 +160,7 @@ namespace GenericsAndInterfaces
         /// Public facing Remove method. Starts at root. O(n) - O(logn)
         /// </summary>
         /// <param name="element">value we want to remove</param>
-        public void Remove(int element)
+        public void Remove(T element)
         {
             if (Root == null)
                 return;
@@ -173,16 +173,16 @@ namespace GenericsAndInterfaces
         /// <param name="cur">Current node that is being looked at</param>
         /// <param name="element">Data bit we are looking for</param>
         /// <returns>The new child of the element prior in the recursive stack</returns>
-        private BinaryTreeNode Remove(BinaryTreeNode cur, int element)
+        private BinaryTreeNode<T> Remove(BinaryTreeNode<T> cur, T element)
         {
             if (cur == null)
                 return cur;
 
-            if (element < cur.Data)
+            if (element.CompareTo(cur.Data) == -1)
             {
                 cur.LeftChild = Remove(cur.LeftChild, element);
             }
-            else if (element > cur.Data)
+            else if (element.CompareTo(cur.Data) == 1)
             {
                 cur.RightChild = Remove(cur.RightChild, element);
             }
@@ -208,9 +208,9 @@ namespace GenericsAndInterfaces
         /// </summary>
         /// <param name="cur">Root of the given subtree</param>
         /// <returns>The minimum value</returns>
-        private int MinValue(BinaryTreeNode cur)
+        private T MinValue(BinaryTreeNode<T> cur)
         {
-            int min = cur.Data;
+            T min = cur.Data;
             while(cur.LeftChild != null)
             {
                 min = cur.LeftChild.Data;
@@ -244,12 +244,12 @@ namespace GenericsAndInterfaces
         /// Recursive method for preorderprint
         /// </summary>
         /// <param name="n">Current node</param>
-        private void PreOrderPrint(BinaryTreeNode n)
+        private void PreOrderPrint(BinaryTreeNode<T> n)
         {
             if (n == null)
                 return;
 
-            Console.Write(n.Data + " ");
+            Console.WriteLine(n.Data + " ");
             PreOrderPrint(n.LeftChild);
             PreOrderPrint(n.RightChild);
         }
@@ -258,27 +258,27 @@ namespace GenericsAndInterfaces
         /// Recursive method for postorderprint
         /// </summary>
         /// <param name="n">Current node</param>
-        private void PostOrderPrint(BinaryTreeNode n)
+        private void PostOrderPrint(BinaryTreeNode<T> n)
         {
             if (n == null)
                 return;
 
             PostOrderPrint(n.LeftChild);
             PostOrderPrint(n.RightChild);
-            Console.Write(n.Data + " ");
+            Console.WriteLine(n.Data + " ");
         }
 
         /// <summary>
         /// Recursive method for inorderprint
         /// </summary>
         /// <param name="n">Current node</param>
-        private void InOrderPrint(BinaryTreeNode n)
+        private void InOrderPrint(BinaryTreeNode<T> n)
         {
             if (n == null)
                 return;
 
             InOrderPrint(n.LeftChild);
-            Console.Write(n.Data + " ");
+            Console.WriteLine(n.Data + " ");
             InOrderPrint(n.RightChild);
         }
         #endregion
@@ -288,7 +288,7 @@ namespace GenericsAndInterfaces
         /// </summary>
         /// <param name="n">Node to count</param>
         /// <returns>Number of nodes int he tree</returns>
-        private int CalculateNodeCount(BinaryTreeNode n)
+        private int CalculateNodeCount(BinaryTreeNode<T> n)
         {
             if (n == null)
                 return 0;
