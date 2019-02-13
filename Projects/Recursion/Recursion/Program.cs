@@ -26,32 +26,32 @@ namespace Recursion
             }
             else
             {
-                FindFile(AppDomain.CurrentDomain.BaseDirectory + "\\" + parentName);
+                FileInfo f = FindFile(AppDomain.CurrentDomain.BaseDirectory + "\\" + parentName);
             }
+            Console.ReadLine();
         }
 
-        static bool fileFound = false;
-        static void FindFile(string path)
+        static FileInfo f = null;
+        static FileInfo FindFile(string path)
         {
-            if (fileFound)
-                return;
-
             foreach (DirectoryInfo directory in new DirectoryInfo(path).GetDirectories())
             {
                 try
                 {
                     foreach (FileInfo file in new DirectoryInfo(directory.FullName).GetFiles())
                     {
-                        fileFound = true;
                         Console.WriteLine("Found file in " + directory.FullName);
+                        return file;
                     }
-                    FindFile(directory.FullName);
+                    if ((f = FindFile(directory.FullName)) != null)
+                        return f;
                 }
                 catch (UnauthorizedAccessException e)
                 {
                     Console.WriteLine("No access available to " + directory.FullName);
                 }
             }
+            return f;
         }
 
         static void GenerateDirectory(string path, int layer)
