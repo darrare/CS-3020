@@ -14,6 +14,12 @@ namespace GenericsAndInterfaces_Demo
 
         static void Main(string[] args)
         {
+            MediaCollection<Audio> audioFiles = new MediaCollection<Audio>();
+
+
+
+
+            return;
             Currency a = new Currency(10, 14, 36);
             Currency b = new Currency(9, 500, 42);
 
