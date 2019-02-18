@@ -12,7 +12,7 @@ namespace Recursion
         static string[] alphabet = new string[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
         //static string[] folderNames = new string[] { "A", "B", "C" };
         static int howDeep = "RYANISCOOL".Length;
-        static int howManyPerLayer = 2;
+        static int howManyPerLayer = 3;
         static string phrase = "RYANISCOOL";
         static string parentName = "FolderTree";
         static Random rand = new Random();
@@ -26,12 +26,13 @@ namespace Recursion
             }
             else
             {
-                FindFile2(AppDomain.CurrentDomain.BaseDirectory + "\\" + parentName);
+                FileInfo f = FindFile(AppDomain.CurrentDomain.BaseDirectory + "\\" + parentName);
             }
+            Console.ReadLine();
         }
 
-        static bool fileFound = false;
-        static void FindFile(string path)
+        static FileInfo f = null;
+        static FileInfo FindFile(string path)
         {
             foreach (DirectoryInfo directory in new DirectoryInfo(path).GetDirectories())
             {
@@ -40,15 +41,18 @@ namespace Recursion
                     foreach (FileInfo file in new DirectoryInfo(directory.FullName).GetFiles())
                     {
                         Console.WriteLine("Found file in " + directory.FullName);
-                        return;
+                        return file;
                     }
-                    FindFile(directory.FullName);
+                    f = FindFile(directory.FullName);
+                    if (f != null)
+                        return f;
                 }
                 catch (UnauthorizedAccessException e)
                 {
                     Console.WriteLine("No access available to " + directory.FullName);
                 }
             }
+            return f;
         }
 
         static void GenerateDirectory(string path, int layer)
@@ -69,33 +73,6 @@ namespace Recursion
                 Directory.CreateDirectory(path + "\\" + s);
                 GenerateDirectory(path + "\\" + s, layer + 1);
             }
-        }
-
-        static void FindFile2(string path)
-        {
-            foreach (DirectoryInfo directory in new DirectoryInfo(path).GetDirectories())
-            {
-                foreach (FileInfo file in new DirectoryInfo(directory.FullName).GetFiles())
-                {
-                    Console.WriteLine("Found file in " + directory.FullName);
-                    return;
-                }
-                FindFile2(directory.FullName);
-            }
-        }
-
-        //static void Main(string[] args)
-        //{
-        //    Console.WriteLine(Factorial(5));
-        //}
-
-        static int Factorial(int val)
-        {
-            if (val == 1)
-            {
-                return val;
-            }
-            return val * Factorial(val - 1);
         }
     }
 }
