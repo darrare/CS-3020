@@ -41,6 +41,10 @@ namespace GenericsAndInterfaces
             Console.WriteLine("\nPost Order Print");
             peopleTree.PostOrderPrint();
 
+            foreach(var v in peopleTree)
+            {
+                Console.WriteLine(v);
+            }
         }
     }
 }

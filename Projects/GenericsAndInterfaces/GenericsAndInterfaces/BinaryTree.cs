@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace GenericsAndInterfaces
         /// BinaryTreeNode class interal to BinaryTree class
         /// because no other class needs to access BinaryTreeNode
         /// </summary>
-        class BinaryTreeNode<T> where T : IComparable
+        class BinaryTreeNode<T> : IEnumerable<T> where T : IComparable
         {
             public T Data { get; set; }
             public BinaryTreeNode<T> LeftChild { get; set; }
@@ -34,6 +35,32 @@ namespace GenericsAndInterfaces
             public int Height()
             {
                 return 1 + Math.Max(LeftChild != null ? LeftChild.Height() : 0, RightChild != null ? RightChild.Height() : 0);
+            }
+
+            public IEnumerator<T> GetEnumerator()
+            {
+                if (LeftChild != null)
+                {
+                    foreach (var v in LeftChild)
+                    {
+                        yield return v;
+                    }
+                }
+
+                yield return Data;
+
+                if (RightChild != null)
+                {
+                    foreach (var v in RightChild)
+                    {
+                        yield return v;
+                    }
+                }
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
             }
         }
 
@@ -294,6 +321,11 @@ namespace GenericsAndInterfaces
                 return 0;
 
             return 1 + CalculateNodeCount(n.LeftChild) + CalculateNodeCount(n.RightChild);
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return Root.GetEnumerator();
         }
     }
 }
