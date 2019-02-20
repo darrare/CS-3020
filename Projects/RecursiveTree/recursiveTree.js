@@ -1,6 +1,6 @@
 angle = 0;
 prevAngle = 0;
-isRandomlyGenerated = false;
+isRandomlyGenerated = true;
 function setup() {
   createCanvas(400, 400);
   slider = createSlider(0, TWO_PI, PI / 4, 0.01);

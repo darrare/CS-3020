@@ -14,8 +14,10 @@ namespace GenericsAndInterfaces_Demo
 
         static void Main(string[] args)
         {
-            string input = "racecar";
-            string reverse = new string(input.Reverse().ToArray());
+            MediaCollection<Audio> audioFiles = new MediaCollection<Audio>();
+
+
+
 
             return;
             Currency a = new Currency(10, 14, 36);

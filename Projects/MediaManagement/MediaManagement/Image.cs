@@ -5,25 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenericsAndInterfaces_Demo
+namespace MediaManagement
 {
-    class Audio : IMedia
+    class Image : IMedia
     {
-
-        public Audio()
-        {
-
-        }
-
         public string Path { get; set; }
         public FileInfo File { get; set; }
         public FileType FileType { get; set; }
         public MediaType MediaType { get; set; }
         public DateTime DateAdded { get; set; }
 
-        public void PlaySoundFile()
+        public Image(string path, FileInfo file, FileType fileType, DateTime dateAdded)
         {
-
+            Path = path;
+            File = file;
+            FileType = fileType;
+            DateAdded = dateAdded;
+            MediaType = MediaType.Image;
         }
     }
 }

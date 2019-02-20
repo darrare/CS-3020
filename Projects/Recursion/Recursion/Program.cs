@@ -43,7 +43,8 @@ namespace Recursion
                         Console.WriteLine("Found file in " + directory.FullName);
                         return file;
                     }
-                    if ((f = FindFile(directory.FullName)) != null)
+                    f = FindFile(directory.FullName);
+                    if (f != null)
                         return f;
                 }
                 catch (UnauthorizedAccessException e)
