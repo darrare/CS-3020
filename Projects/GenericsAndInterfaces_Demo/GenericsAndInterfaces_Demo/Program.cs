@@ -14,6 +14,10 @@ namespace GenericsAndInterfaces_Demo
 
         static void Main(string[] args)
         {
+            string input = "racecar";
+            string reverse = new string(input.Reverse().ToArray());
+
+            return;
             Currency a = new Currency(10, 14, 36);
             Currency b = new Currency(9, 500, 42);
 
