@@ -13,14 +13,14 @@ namespace MediaManagement
         public FileInfo File { get; set; }
         public FileType FileType { get; set; }
         public MediaType MediaType { get; set; }
-        public DateTime DateAdded { get; set; }
+        public DateTime DateLastModified { get; set; }
 
         public Video(string path, FileInfo file, FileType fileType, DateTime dateAdded)
         {
             Path = path;
             File = file;
             FileType = fileType;
-            DateAdded = dateAdded;
+            DateLastModified = dateAdded;
             MediaType = MediaType.Video;
         }
     }

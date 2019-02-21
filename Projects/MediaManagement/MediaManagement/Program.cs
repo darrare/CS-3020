@@ -19,11 +19,12 @@ namespace MediaManagement
             do
             {
                 userInput = Menu();
-                switch(userInput)
+                switch (userInput)
                 {
                     case 1:
                         Console.WriteLine("Scanning for videos:");
                         ScanMenu(MediaType.Video);
+                        Console.WriteLine();
                         Console.WriteLine("Finished scanning... Press any key to continue.");
                         Console.ReadKey();
                         Console.Clear();
@@ -31,6 +32,7 @@ namespace MediaManagement
                     case 2:
                         Console.WriteLine("Scanning for audio:");
                         ScanMenu(MediaType.Audio);
+                        Console.WriteLine();
                         Console.WriteLine("Finished scanning... Press any key to continue.");
                         Console.ReadKey();
                         Console.Clear();
@@ -38,6 +40,7 @@ namespace MediaManagement
                     case 3:
                         Console.WriteLine("Scanning for images:");
                         ScanMenu(MediaType.Image);
+                        Console.WriteLine();
                         Console.WriteLine("Finished scanning... Press any key to continue.");
                         Console.ReadKey();
                         Console.Clear();
@@ -45,32 +48,147 @@ namespace MediaManagement
                     case 4:
                         Console.WriteLine("Scanning for all:");
                         ScanMenu(MediaType.All);
+                        Console.WriteLine();
                         Console.WriteLine("Finished scanning... Press any key to continue.");
                         Console.ReadKey();
                         Console.Clear();
                         break;
                     case 5:
-
+                        LibraryMenu(videoCollection);
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 6:
-
+                        LibraryMenu(audioCollection);
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 7:
-
+                        LibraryMenu(imageCollection);
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 8:
                         Console.WriteLine("Thank you for using this program.");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                 }
             } while (userInput != 8);
+        }
+
+        static void LibraryMenu(MediaCollectionAbstract collection)
+        {
+            int userInput = 0;
+            int input = 0;
+            do
+            {
+                Console.Clear();
+                if (!collection.PrintLibrary())
+                    return;
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine("1. Sort by name.");
+                Console.WriteLine("2. Sort by file extension.");
+                Console.WriteLine("3. Sort by date last accessed.");
+                Console.WriteLine("4. Touch file.");
+                Console.WriteLine("5. Remove file.");
+                Console.WriteLine("6. Use file.");
+                Console.WriteLine("7. Back to main menu.");
+                Console.WriteLine("----------------------------------------------");
+                Console.Write("Input: ");
+                if (!int.TryParse(Console.ReadLine(), out userInput) || userInput > 7 || userInput < 1)
+                {
+                    Console.WriteLine("You have entered an incorrect key. Try again.");
+                    Console.WriteLine("Press any key to continue.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    continue;
+                }
+                else if (userInput == 7)
+                {
+                    break;
+                }
+
+                switch (userInput)
+                {
+                    case 1:
+                        collection.SortByName();
+                        break;
+                    case 2:
+                        collection.SortByExtension();
+                        break;
+                    case 3:
+                        collection.SortByDateLastAccessed();
+                        break;
+                    case 4:
+                        Console.WriteLine("What is the index of the file you want to touch?");
+                        if (!int.TryParse(Console.ReadLine(), out input))
+                        {
+                            Console.WriteLine("You have entered an incorrect key. Try again.");
+                            Console.WriteLine("Press any key to continue.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            continue;
+                        }
+                        if (collection.TouchFile(input))
+                            Console.WriteLine("You have touched the file.");
+                        else
+                            Console.WriteLine("You have entered an index out of range.");
+
+                        Console.WriteLine("Press any key to continue.");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    case 5:
+                        Console.WriteLine("What is the index of the file you want to remove?");
+                        if (!int.TryParse(Console.ReadLine(), out input))
+                        {
+                            Console.WriteLine("You have entered an incorrect key. Try again.");
+                            Console.WriteLine("Press any key to continue.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            continue;
+                        }
+                        if (collection.RemoveFile(input))
+                            Console.WriteLine("You have removed the file.");
+                        else
+                            Console.WriteLine("You have entered an index out of range.");
+
+                        Console.WriteLine("Press any key to continue.");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    case 6:
+                        Console.WriteLine("What is the index of the file you want to use?");
+                        if (!int.TryParse(Console.ReadLine(), out input))
+                        {
+                            Console.WriteLine("You have entered an incorrect key. Try again.");
+                            Console.WriteLine("Press any key to continue.");
+                            Console.ReadKey();
+                            Console.Clear();
+                            continue;
+                        }
+                        if (collection.UseFile(input))
+                            Console.WriteLine("You have used the file.");
+                        else
+                            Console.WriteLine("You have entered an index out of range.");
+
+                        Console.WriteLine("Press any key to continue.");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    case 7:
+                        Console.WriteLine("Going back to main menu.");
+                        Console.WriteLine("Press any key to continue.");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                }
+            } while (userInput != 7);
         }
 
         static void ScanMenu(MediaType type)
@@ -101,7 +219,7 @@ namespace MediaManagement
 
         static void RunScan(MediaType type, List<string> directories)
         {
-            foreach(string path in directories)
+            foreach (string path in directories)
             {
                 switch (type)
                 {

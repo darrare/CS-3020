@@ -15,6 +15,6 @@ namespace MediaManagement
         FileInfo File { get; set; }
         FileType FileType { get; set; }
         MediaType MediaType { get; set; }
-        DateTime DateAdded { get; set; }
+        DateTime DateLastModified { get; set; }
     }
 }
