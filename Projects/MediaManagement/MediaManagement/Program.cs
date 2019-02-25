@@ -50,7 +50,7 @@ namespace MediaManagement
                         Console.Clear();
                         break;
                     case 5:
-
+                        videoCollection.Print();
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
                         break;
@@ -106,7 +106,7 @@ namespace MediaManagement
                 switch (type)
                 {
                     case MediaType.Audio:
-                        RecursivelySearchForFileType(path, new FileType[] { FileType.MP3, FileType.WAV });
+                        RecursivelySearchForFileType(path, new FileType[] { (FileType)1, (FileType)0 });
                         break;
                     case MediaType.Video:
                         RecursivelySearchForFileType(path, new FileType[] { FileType.MP4, FileType.AVI });

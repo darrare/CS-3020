@@ -18,6 +18,10 @@ namespace GenericsAndInterfaces
          */
         static void Main(string[] args)
         {
+            Person hello = new Person("Hello", 5, 5);
+            int age = hello.Age;
+            Console.WriteLine(age);
+
             BinaryTree<int> t = new BinaryTree<int>();
             for(int i = 0; i < 10; i++)
             {

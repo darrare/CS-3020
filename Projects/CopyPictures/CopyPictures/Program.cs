@@ -45,17 +45,19 @@ namespace CopyPictures
             }
             foreach(string s in paths)
             {
-                RecursivelySearchForImageType(s, extensions);
+                List<FileInfo> info = RecursivelySearchForImageType(s, extensions);
             }
             
             Console.WriteLine("Application finished");
             Console.ReadKey();
         }
 
-        static void RecursivelySearchForImageType(string path, string[] types)
+        static List<FileInfo> RecursivelySearchForImageType(string path, string[] types)
         {
+            List<FileInfo> media = new List<FileInfo>();
             foreach (DirectoryInfo directory in new DirectoryInfo(path).GetDirectories())
             {
+                
                 try
                 {
                     foreach (string s in types)
@@ -64,19 +66,22 @@ namespace CopyPictures
                         {
                             Console.WriteLine("Found file " + file.Name + " in " + file.DirectoryName);
                             string parsedFileName = file.FullName.Split(new char[] { ':' })[1];
-                            string parsedFilePath = parsedFileName.Split(new string[] { s }, StringSplitOptions.RemoveEmptyEntries)[0];
+                            string parsedFilePath = parsedFileName.Split(new string[] { s }, 
+                                StringSplitOptions.RemoveEmptyEntries)[0];
                             parsedFilePath = parsedFilePath.Remove(parsedFilePath.LastIndexOf("\\"));
-                            Directory.CreateDirectory(Application.StartupPath + parsedFilePath);
-                            File.Copy(file.FullName, Application.StartupPath + parsedFileName, true);
+                            Directory.CreateDirectory(AppDomain.CurrentDomain.BaseDirectory + parsedFilePath);
+                            File.Copy(file.FullName, AppDomain.CurrentDomain.BaseDirectory + parsedFileName, true);
+                            media.Add(file);
                         }
                     }
-                    RecursivelySearchForImageType(directory.FullName, types);
+                    media.AddRange(RecursivelySearchForImageType(directory.FullName, types));   
                 }
                 catch (UnauthorizedAccessException e)
                 {
                     Console.WriteLine("No access available to " + directory.FullName);
                 }
             }
+            return media;
         }
     }
 }

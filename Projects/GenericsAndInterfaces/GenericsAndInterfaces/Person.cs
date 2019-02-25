@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace GenericsAndInterfaces
 {
-    class Person : IComparable
+    class Person : IComparable<Person>
     {
         public string name;
         public float weight;
         public float height;
+        int age = 5;
+        public int Age { get; set; }
 
         public Person(string name, float weight, float height)
         {
@@ -36,6 +38,11 @@ namespace GenericsAndInterfaces
             {
                 return 0;
             }
+        }
+
+        public int CompareTo(Person other)
+        {
+            throw new NotImplementedException();
         }
 
         public override string ToString()

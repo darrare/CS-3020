@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GenericsAndInterfaces
 {
-    class BinaryTree<T> where T : IComparable
+    class BinaryTree<T> : IEnumerable where T : IComparable
     {
         /// <summary>
         /// BinaryTreeNode class interal to BinaryTree class
@@ -326,6 +326,11 @@ namespace GenericsAndInterfaces
         public IEnumerator<T> GetEnumerator()
         {
             return Root.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

@@ -9,5 +9,19 @@ namespace MediaManagement
     class MediaCollection<T> where T : IMedia
     {
         public List<T> Media { get; set; } = new List<T>();
+
+        public void Print()
+        {
+
+        }
+
+        public void Touch()
+        {
+
+        }
+        public void Remove()
+        {
+
+        }
     }
 }
