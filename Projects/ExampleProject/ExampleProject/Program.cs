@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ExampleProject
 {
@@ -10,6 +11,12 @@ namespace ExampleProject
     {
         static void Main(string[] args)
         {
+            List<Media> media = new List<Media>();
+            List<Media> frontAudio = media.TakeWhile(t => t.MediaType == MediaType.Audio).ToList();
+
+
+
+            return;
             bool isLooping = true;
             do
             {
