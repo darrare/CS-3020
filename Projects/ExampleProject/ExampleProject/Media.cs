@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace MediaManagement
+namespace ExampleProject
 {
-    class Video : IMedia
+    enum FileType { WAV, MP3, MP4, AVI, MOV, PNG, JPG }
+    enum MediaType { Audio, Video, Image }
+    class Media
     {
         public string Path { get; set; }
         public FileInfo File { get; set; }
@@ -15,13 +17,12 @@ namespace MediaManagement
         public MediaType MediaType { get; set; }
         public DateTime DateLastModified { get; set; }
 
-        public Video(string path, FileInfo file, FileType fileType, DateTime dateAdded)
+        public Media(string path, FileInfo file, FileType fileType, MediaType mediaType)
         {
             Path = path;
             File = file;
             FileType = fileType;
-            DateLastModified = dateAdded;
-            MediaType = MediaType.Video;
+            MediaType = mediaType;
         }
     }
 }
