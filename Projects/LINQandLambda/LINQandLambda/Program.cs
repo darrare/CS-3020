@@ -9,6 +9,48 @@ namespace LINQandLambda
         static Random rand = new Random(1234);
         static void Main(string[] args)
         {
+            List<int> values = new List<int>();
+            for (int i = 1; i < 1000; i++)
+            {
+                values.Add(i);
+            }
+
+            var results = values.Select(a1 =>
+            {
+                return values.Select(a2 =>
+                {
+                    if ((a1 * a2).ToString() == new string((a1 * a2).ToString().Reverse().ToArray()))
+                    {
+                        return new { arg1 = a1, arg2 = a2, large = a1 * a2 };
+                    }
+                    return new { arg1 = 0, arg2 = 0, large = 0 };
+                }).Where(g => g.large != 0);
+            });
+
+            int largest = 0;
+            int arg1 = 0;
+            int arg2 = 0;
+            foreach (var res in results)
+            {
+                foreach(var r in res)
+                {
+                    if (r.large > largest)
+                    {
+                        largest = r.large;
+                        arg1 = r.arg1;
+                        arg2 = r.arg2;
+                    }
+                    Console.WriteLine("Arguments " + r.arg1 + " and " + r.arg2 + " make palindromic number " + r.large);
+                }
+            }
+
+            Console.WriteLine("\nThe largest palindrome made from the product of two 3-digit numbers is:");
+            Console.WriteLine(largest + " made from the product of " + arg1 + " and " + arg2);
+
+
+            return;
+
+
             List<int> integers = ResetListInt();
 
             #region Randomly sort integers (.OrderBy)
@@ -58,21 +100,15 @@ namespace LINQandLambda
             tempList.Clear();
             #endregion
 
-            #region Combine two lists (.Select) (.Union)
+            #region Add 1000 to every element in a list, but still keep the original values (.Select) (List.AddRange)
             integers = ResetListInt();
-            List<int> otherIntegers = new List<int>();
             //Replace the following for loop with 1 LINQ statement
             for(int i = 0; i < integers.Count; i++)
             {
-                otherIntegers.Add(1000 + integers[i]);
+                integers.Add(1000 + integers[i]);
             }
 
-            //Replace the following for loop with 1 LINQ statement
-            for (int i = 0; i < otherIntegers.Count; i++)
-            {
-                integers.Add(otherIntegers[i]);
-            }
-            //Integers now contains all values from both lists
+            //Integers now contains the original elements, plus all the original elements + 1000
             #endregion
         }
 
