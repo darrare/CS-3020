@@ -36,6 +36,9 @@ namespace Tasks
                 }));
             }
 
+            foreach (Task t in tasks)
+                t.Wait();
+
             //for (int i = 0; i < threadCount; i++)
             //{
             //    for (int j = 0; j < threadIterations; j++)
@@ -44,8 +47,7 @@ namespace Tasks
             //    }
             //}
 
-            foreach (Task t in tasks)
-                t.Wait();
+
 
             timer.Stop();
             Console.WriteLine((float)timer.ElapsedMilliseconds / 1000f + " seconds elapsed");

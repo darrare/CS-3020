@@ -20,24 +20,27 @@ namespace CalculatePIOnSingleThread
                 {
                     if (isSubTracting)
                     {
-                        val -= 1f / alternatingOdds;
+                        val -= 1d / alternatingOdds;
                     }
                     else
                     {
-                        val += 1f / alternatingOdds;
+                        val += 1d / alternatingOdds;
                     }
                     isSubTracting = !isSubTracting;
                     alternatingOdds += 2;
-                    pi = val * 4f;
+                    pi = val * 4d;
                 }
             });
             Console.WriteLine("Calculating PI started");
             Console.WriteLine("Press any key to get the value at this given time.");
             Console.WriteLine("The true value of pi is: 3.14159265358979");
-            Console.ReadKey(); Console.WriteLine();
-            Console.WriteLine("The value of pi is: ");
-            Console.WriteLine(pi);
-            Console.ReadKey();
+            while (true)
+            {
+                Console.ReadKey(); Console.WriteLine();
+                Console.WriteLine("The current value of pi is: ");
+                Console.WriteLine(pi);
+            }
+
         }
     }
 }
