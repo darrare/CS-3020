@@ -71,7 +71,8 @@ namespace SoritingAlgorithmTest
             {
                 array[i] = rand.Next(int.MinValue, int.MaxValue);
             }
-            ErrorBox.Text = "Array of size " + numElements + " created and ready to use.";
+
+            ErrorBox.Invoke(new MethodInvoker(delegate { ErrorBox.Text = "Array of size " + numElements + " created and ready to use.";  }));
         }
 
 
@@ -336,7 +337,7 @@ namespace SoritingAlgorithmTest
                     BottomUpMerge(a, x, (x + i < n) ? x + i : n, (j + 2 * i < n) ? j + 2 * i : n, b, d);
                 });
 
-                //for (int j = 0; j < n; j ++)
+                //for (int j = 0; j < n; j++)
                 //{
                 //    int x = j + 2 * i;
                 //    BottomUpMerge(a, x, (x + i < n) ? x + i : n, (j + 2 * i < n) ? j + 2 * i : n, b, d);
@@ -346,6 +347,7 @@ namespace SoritingAlgorithmTest
                 {
                     a[j] = b[j];
                 });
+           
                 //for (int j = 0; j < n; j++)
                 //{
                 //    a[j] = b[j];
@@ -361,28 +363,23 @@ namespace SoritingAlgorithmTest
 
             for (int k = iLeft; k < iEnd; k++)
             {
-                //The below ifs look terrible due to the fact I needed to split it for proper comparison counting
                 if (i < iRight)
                 {
                     if (j >= iEnd || a[i] <= a[j])
                     {
                         b[k] = a[i];
                         i++;
-                        d.comparisons++;
-                        d.assignments++;
                     }
                     else
                     {
                         b[k] = a[j];
                         j++;
-                        d.assignments++;
                     }
                 }
                 else
                 {
                     b[k] = a[j];
                     j++;
-                    d.assignments++;
                 }
             }
         }
