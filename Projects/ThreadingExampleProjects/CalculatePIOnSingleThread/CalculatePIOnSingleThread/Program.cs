@@ -15,7 +15,7 @@ namespace CalculatePIOnSingleThread
             {
                 double val = 1;
                 bool isSubTracting = true;
-                int alternatingOdds = 3;
+                long alternatingOdds = 3;
                 while(true)
                 {
                     if (isSubTracting)
