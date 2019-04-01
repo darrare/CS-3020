@@ -17,7 +17,7 @@ namespace SingleThreadForUserInput
             do
             {
                 Console.WriteLine("Enter the menu option for what you want to select.");
-                Console.WriteLine("1. Count to infinity.");
+                Console.WriteLine("1. Count to infinity. Press any button to stop");
                 Console.WriteLine("2. Print 1-50, in whatever order you want.");
                 Console.WriteLine("3. Bubble sort a list of 25000 elements.");
                 Console.WriteLine("4. Exit this program.");
@@ -33,6 +33,7 @@ namespace SingleThreadForUserInput
                         worker.Abort();
                         break;
                     case 2:
+
                         for(int i = 1; i <= 50; i++)
                         {
                             int h = i;
@@ -45,6 +46,8 @@ namespace SingleThreadForUserInput
                         {
                             threads[i].Join();
                         }
+                        foreach (Thread t in threads)
+                            t.Join();
                         break;
                     case 3:
                         List<int> integers = new List<int>();

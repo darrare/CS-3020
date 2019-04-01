@@ -9,7 +9,7 @@ namespace Locking
 {
     class Program
     {
-        static object lockResult = new object();
+        static object resultLocker = new object();
         static int result = 0;
         static void Main(string[] args)
         {
@@ -18,21 +18,18 @@ namespace Locking
             {
                 threads.Add(new Thread(() => AddTo(1))); //Create threads
             }
-            Thread.Sleep(1000); //Sleep to ensure threads are created
+            Thread.Sleep(100); //Sleep to ensure threads are created
             foreach(Thread t in threads)
             {
                 t.Start(); //Start each thread
             }
-            Thread.Sleep(1000);
+            foreach(Thread t in threads)
+            {
+                t.Join();
+            }
             Console.WriteLine(result); //Is result 1000?
             Console.ReadKey();
         }
-        static void AddTo(int i)
-        {
-            lock(lockResult)
-            {
-                result = result + i;
-            }
-        }
+        static void AddTo(int i) { lock(resultLocker) result = result + i; }
     }
 }
