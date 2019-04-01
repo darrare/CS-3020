@@ -66,13 +66,17 @@ namespace SoritingAlgorithmTest
                 return;
             }
 
-            array = new int[numElements];
-            for (int i = 0; i < array.Length; i++)
+            Task.Factory.StartNew(() =>
             {
-                array[i] = rand.Next(int.MinValue, int.MaxValue);
-            }
+                array = new int[numElements];
+                for (int i = 0; i < array.Length; i++)
+                {
+                    array[i] = rand.Next(int.MinValue, int.MaxValue);
+                }
 
-            ErrorBox.Invoke(new MethodInvoker(delegate { ErrorBox.Text = "Array of size " + numElements + " created and ready to use.";  }));
+                ErrorBox.Invoke(new MethodInvoker(delegate { ErrorBox.Text = "Array of size " + numElements + " created and ready to use."; }));
+            });
+
         }
 
 
@@ -331,27 +335,27 @@ namespace SoritingAlgorithmTest
         {
             for (int i = 1; i < n; i *= 2)
             {
-                Parallel.For(0, n / (2 * i), j =>
-                {
-                    int x = j + 2 * i;
-                    BottomUpMerge(a, x, (x + i < n) ? x + i : n, (j + 2 * i < n) ? j + 2 * i : n, b, d);
-                });
-
-                //for (int j = 0; j < n; j++)
+                //Parallel.For(0, n / (2 * i), j =>
                 //{
                 //    int x = j + 2 * i;
                 //    BottomUpMerge(a, x, (x + i < n) ? x + i : n, (j + 2 * i < n) ? j + 2 * i : n, b, d);
-                //}
+                //});
 
-                Parallel.For(0, n, j =>
+                for (int j = 0; j < n; j++)
                 {
-                    a[j] = b[j];
-                });
-           
-                //for (int j = 0; j < n; j++)
+                    int x = j + 2 * i;
+                    BottomUpMerge(a, x, (x + i < n) ? x + i : n, (j + 2 * i < n) ? j + 2 * i : n, b, d);
+                }
+
+                //Parallel.For(0, n, j =>
                 //{
                 //    a[j] = b[j];
-                //}
+                //});
+
+                for (int j = 0; j < n; j++)
+                {
+                    a[j] = b[j];
+                }
 
                 d.assignments += (uint)n;
             }

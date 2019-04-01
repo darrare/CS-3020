@@ -1,0 +1,7 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CopyPictures\CopyPictures\bin\Debug\CopyPictures.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CopyPictures\CopyPictures\bin\Debug\CopyPictures.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CopyPictures\CopyPictures\bin\Debug\CopyPictures.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CopyPictures\CopyPictures\obj\Debug\CopyPictures.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CopyPictures\CopyPictures\obj\Debug\CopyPictures.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CopyPictures\CopyPictures\obj\Debug\CopyPictures.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CopyPictures\CopyPictures\obj\Debug\CopyPictures.pdb

@@ -1,0 +1,7 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Locking\Locking\bin\Debug\Locking.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Locking\Locking\bin\Debug\Locking.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Locking\Locking\bin\Debug\Locking.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Locking\Locking\obj\Debug\Locking.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Locking\Locking\obj\Debug\Locking.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Locking\Locking\obj\Debug\Locking.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Locking\Locking\obj\Debug\Locking.csprojAssemblyReference.cache

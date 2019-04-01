@@ -1,0 +1,7 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\DeadlockExample\DeadlockExample\bin\Debug\DeadlockExample.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\DeadlockExample\DeadlockExample\bin\Debug\DeadlockExample.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\DeadlockExample\DeadlockExample\bin\Debug\DeadlockExample.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\DeadlockExample\DeadlockExample\obj\Debug\DeadlockExample.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\DeadlockExample\DeadlockExample\obj\Debug\DeadlockExample.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\DeadlockExample\DeadlockExample\obj\Debug\DeadlockExample.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\DeadlockExample\DeadlockExample\obj\Debug\DeadlockExample.csprojAssemblyReference.cache

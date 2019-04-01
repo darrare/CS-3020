@@ -6,6 +6,7 @@ namespace LINQandLambda
 {
     class Program
     {
+
         static Random rand = new Random(1234);
         static void Main(string[] args)
         {

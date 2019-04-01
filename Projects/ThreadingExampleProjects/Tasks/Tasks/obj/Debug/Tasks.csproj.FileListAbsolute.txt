@@ -1,0 +1,7 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Tasks\Tasks\bin\Debug\Tasks.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Tasks\Tasks\bin\Debug\Tasks.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Tasks\Tasks\bin\Debug\Tasks.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Tasks\Tasks\obj\Debug\Tasks.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Tasks\Tasks\obj\Debug\Tasks.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Tasks\Tasks\obj\Debug\Tasks.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\Tasks\Tasks\obj\Debug\Tasks.pdb

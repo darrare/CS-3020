@@ -1,0 +1,9 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\bin\Debug\MediaManagement.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\bin\Debug\MediaManagement.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\bin\Debug\MediaManagement.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\obj\Debug\Interop.WMPLib.dll
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.csproj.ResolveComReference.cache

@@ -1,0 +1,11 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\bin\Debug\netcoreapp2.0\LINQandLambda.deps.json
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\bin\Debug\netcoreapp2.0\LINQandLambda.runtimeconfig.json
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\bin\Debug\netcoreapp2.0\LINQandLambda.runtimeconfig.dev.json
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\bin\Debug\netcoreapp2.0\LINQandLambda.dll
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\bin\Debug\netcoreapp2.0\LINQandLambda.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\obj\Debug\netcoreapp2.0\LINQandLambda.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\obj\Debug\netcoreapp2.0\LINQandLambda.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\obj\Debug\netcoreapp2.0\LINQandLambda.AssemblyInfoInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\obj\Debug\netcoreapp2.0\LINQandLambda.AssemblyInfo.cs
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\obj\Debug\netcoreapp2.0\LINQandLambda.dll
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\LINQandLambda\LINQandLambda\obj\Debug\netcoreapp2.0\LINQandLambda.pdb

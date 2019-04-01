@@ -1,0 +1,7 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Recursion\Recursion\bin\Debug\Recursion.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Recursion\Recursion\bin\Debug\Recursion.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Recursion\Recursion\bin\Debug\Recursion.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Recursion\Recursion\obj\Debug\Recursion.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Recursion\Recursion\obj\Debug\Recursion.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Recursion\Recursion\obj\Debug\Recursion.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Recursion\Recursion\obj\Debug\Recursion.pdb

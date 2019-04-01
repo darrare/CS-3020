@@ -9,6 +9,7 @@ namespace Locking
 {
     class Program
     {
+        static object lockResult = new object();
         static int result = 0;
         static void Main(string[] args)
         {
@@ -22,9 +23,16 @@ namespace Locking
             {
                 t.Start(); //Start each thread
             }
+            Thread.Sleep(1000);
             Console.WriteLine(result); //Is result 1000?
             Console.ReadKey();
         }
-        static void AddTo(int i) { result = result + i; }
+        static void AddTo(int i)
+        {
+            lock(lockResult)
+            {
+                result = result + i;
+            }
+        }
     }
 }

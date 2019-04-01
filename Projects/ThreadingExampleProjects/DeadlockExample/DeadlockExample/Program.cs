@@ -15,7 +15,6 @@ namespace DeadlockExample
         static int b_val = 5;
         static void Main(string[] args)
         {
-            Console.WriteLine(System.Environment.ProcessorCount / 2);
             Thread A = new Thread(AWork);
             Thread B = new Thread(BWork);
             A.Start(); B.Start();

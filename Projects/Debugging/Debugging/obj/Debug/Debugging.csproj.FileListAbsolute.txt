@@ -1,0 +1,7 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Debugging\Debugging\bin\Debug\Debugging.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Debugging\Debugging\bin\Debug\Debugging.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Debugging\Debugging\bin\Debug\Debugging.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Debugging\Debugging\obj\Debug\Debugging.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Debugging\Debugging\obj\Debug\Debugging.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Debugging\Debugging\obj\Debug\Debugging.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Debugging\Debugging\obj\Debug\Debugging.pdb

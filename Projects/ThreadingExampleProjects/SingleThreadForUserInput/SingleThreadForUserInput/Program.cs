@@ -27,12 +27,23 @@ namespace SingleThreadForUserInput
                 switch (input)
                 {
                     case 1:
-                        CountToInfinity();
+                        worker = new Thread(CountToInfinity);
+                        worker.Start();
+                        Console.ReadKey();
+                        worker.Abort();
                         break;
                     case 2:
                         for(int i = 1; i <= 50; i++)
                         {
-                            PrintNumber(i);
+                            int h = i;
+                            threads.Add(new Thread(() => PrintNumber(h)));
+                            threads.Last().Start();
+                        }
+
+                        //Important, stops current thread until all return
+                        for(int i = 0; i < threads.Count; i++)
+                        {
+                            threads[i].Join();
                         }
                         break;
                     case 3:
@@ -42,7 +53,9 @@ namespace SingleThreadForUserInput
                         {
                             integers.Add(rand.Next(0, 50000));
                         }
-                        BubbleSort(integers);
+
+                        new Thread(() => BubbleSort(integers)).Start();
+
                         break;
                     case 4:
                         Environment.Exit(0);

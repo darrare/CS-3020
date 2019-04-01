@@ -1,0 +1,7 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\CalculatePIOnSingleThread\CalculatePIOnSingleThread\bin\Debug\CalculatePIOnSingleThread.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\CalculatePIOnSingleThread\CalculatePIOnSingleThread\bin\Debug\CalculatePIOnSingleThread.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\CalculatePIOnSingleThread\CalculatePIOnSingleThread\bin\Debug\CalculatePIOnSingleThread.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\CalculatePIOnSingleThread\CalculatePIOnSingleThread\obj\Debug\CalculatePIOnSingleThread.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\CalculatePIOnSingleThread\CalculatePIOnSingleThread\obj\Debug\CalculatePIOnSingleThread.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\CalculatePIOnSingleThread\CalculatePIOnSingleThread\obj\Debug\CalculatePIOnSingleThread.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\CalculatePIOnSingleThread\CalculatePIOnSingleThread\obj\Debug\CalculatePIOnSingleThread.pdb

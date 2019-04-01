@@ -1,0 +1,10 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\bin\Debug\SoritingAlgorithmTest.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\bin\Debug\SoritingAlgorithmTest.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\bin\Debug\SoritingAlgorithmTest.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\obj\Debug\SoritingAlgorithmTest.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\obj\Debug\SoritingAlgorithmTest.Form1.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\obj\Debug\SoritingAlgorithmTest.Properties.Resources.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\obj\Debug\SoritingAlgorithmTest.csproj.GenerateResource.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\obj\Debug\SoritingAlgorithmTest.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\obj\Debug\SoritingAlgorithmTest.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\SoritingAlgorithmTest\SoritingAlgorithmTest\obj\Debug\SoritingAlgorithmTest.pdb

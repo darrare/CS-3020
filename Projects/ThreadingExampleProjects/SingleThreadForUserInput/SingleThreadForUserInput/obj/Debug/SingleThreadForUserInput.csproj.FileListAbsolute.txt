@@ -1,0 +1,7 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\SingleThreadForUserInput\SingleThreadForUserInput\bin\Debug\SingleThreadForUserInput.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\SingleThreadForUserInput\SingleThreadForUserInput\bin\Debug\SingleThreadForUserInput.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\SingleThreadForUserInput\SingleThreadForUserInput\bin\Debug\SingleThreadForUserInput.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\SingleThreadForUserInput\SingleThreadForUserInput\obj\Debug\SingleThreadForUserInput.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\SingleThreadForUserInput\SingleThreadForUserInput\obj\Debug\SingleThreadForUserInput.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\SingleThreadForUserInput\SingleThreadForUserInput\obj\Debug\SingleThreadForUserInput.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\ThreadingExampleProjects\SingleThreadForUserInput\SingleThreadForUserInput\obj\Debug\SingleThreadForUserInput.pdb

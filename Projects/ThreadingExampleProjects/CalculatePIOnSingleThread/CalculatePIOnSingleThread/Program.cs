@@ -11,11 +11,12 @@ namespace CalculatePIOnSingleThread
         static void Main(string[] args)
         {
             double pi = 0;
+
             Task t = Task.Factory.StartNew(() =>
             {
                 double val = 1;
                 bool isSubTracting = true;
-                int alternatingOdds = 3;
+                ulong alternatingOdds = 3;
                 while(true)
                 {
                     if (isSubTracting)
