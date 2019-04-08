@@ -34,12 +34,12 @@ namespace DepthFirstSearch
 
         private void Button_FindPathInstant_Click(object sender, EventArgs e)
         {
-            graph.SolveGraphInstantly();
+            graph.SolveGraph();
         }
 
         private void Button_FindPathIteration_Click(object sender, EventArgs e)
         {
-
+            graph.SolveGraph(10);
         }
 
         private void Button_RandomizeMap_Click(object sender, EventArgs e)

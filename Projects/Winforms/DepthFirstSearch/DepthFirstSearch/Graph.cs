@@ -115,7 +115,7 @@ namespace DepthFirstSearch
         Stack stack = new Stack();
 
 
-        public void SolveGraphInstantly()
+        public void SolveGraph(int delay = 0)
         {
             ResetGraph();
             StartNode.BackLength = 0;
@@ -149,13 +149,17 @@ namespace DepthFirstSearch
                             Form.AlterNodeColor(curNode.X, curNode.Y, Color.Yellow);
                             curNode = curNode.Backnode;
                             Form.Update();
-                            Thread.Sleep(10);
+                            if (delay != 0)
+                                Thread.Sleep(delay * 10);
                         }
                         return;
                     }
                 }
-                Form.Update();
-                Thread.Sleep(1);
+                if (delay != 0)
+                {
+                    Form.Update();
+                    Thread.Sleep(delay);
+                }
             }
             Console.WriteLine("False");
         }
