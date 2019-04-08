@@ -60,7 +60,7 @@ namespace CollisionDetection
             /**********************************************************************/
             /* SWITCH THESE LINES OF CODE TO TEST THE DIFFERENT METHODS */
             //CollisionDetection();
-            CollisionDetectionParallelOptimized();
+            CollisionDetectionParallel();
             /**********************************************************************/
             DrawSquares(map);
 
