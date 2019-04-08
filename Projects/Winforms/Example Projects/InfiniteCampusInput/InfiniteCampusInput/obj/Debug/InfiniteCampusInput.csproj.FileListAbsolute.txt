@@ -1,0 +1,10 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\bin\Debug\InfiniteCampusInput.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\bin\Debug\InfiniteCampusInput.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\bin\Debug\InfiniteCampusInput.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\obj\Debug\InfiniteCampusInput.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\obj\Debug\InfiniteCampusInput.Form1.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\obj\Debug\InfiniteCampusInput.Properties.Resources.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\obj\Debug\InfiniteCampusInput.csproj.GenerateResource.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\obj\Debug\InfiniteCampusInput.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\obj\Debug\InfiniteCampusInput.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\InfiniteCampusInput\InfiniteCampusInput\obj\Debug\InfiniteCampusInput.pdb

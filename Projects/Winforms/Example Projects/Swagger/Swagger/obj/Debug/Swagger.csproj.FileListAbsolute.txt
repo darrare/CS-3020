@@ -1,0 +1,10 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\bin\Debug\Swagger.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\bin\Debug\Swagger.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\bin\Debug\Swagger.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\obj\Debug\Swagger.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\obj\Debug\Swagger.Form1.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\obj\Debug\Swagger.Properties.Resources.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\obj\Debug\Swagger.csproj.GenerateResource.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\obj\Debug\Swagger.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\obj\Debug\Swagger.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\Swagger\Swagger\obj\Debug\Swagger.pdb

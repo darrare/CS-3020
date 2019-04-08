@@ -1,0 +1,10 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\obj\Debug\Toolbox.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\obj\Debug\Toolbox.Form1.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\obj\Debug\Toolbox.Properties.Resources.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\obj\Debug\Toolbox.csproj.GenerateResource.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\obj\Debug\Toolbox.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\bin\Debug\Toolbox.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\bin\Debug\Toolbox.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\bin\Debug\Toolbox.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\obj\Debug\Toolbox.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Toolbox\Toolbox\obj\Debug\Toolbox.pdb

@@ -28,103 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DoSomethingButton = new System.Windows.Forms.Button();
-            this.Failsafe = new System.Windows.Forms.CheckBox();
-            this.DateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.PictureBox = new System.Windows.Forms.PictureBox();
-            this.SecretCodeTextBox = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button0 = new System.Windows.Forms.Button();
+            this.DisplayBox = new System.Windows.Forms.TextBox();
+            this.buttonMultiply = new System.Windows.Forms.Button();
+            this.buttonAddition = new System.Windows.Forms.Button();
+            this.buttonEquals = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // DoSomethingButton
+            // button1
             // 
-            this.DoSomethingButton.Location = new System.Drawing.Point(13, 28);
-            this.DoSomethingButton.Name = "DoSomethingButton";
-            this.DoSomethingButton.Size = new System.Drawing.Size(125, 23);
-            this.DoSomethingButton.TabIndex = 0;
-            this.DoSomethingButton.Text = "Do Something";
-            this.DoSomethingButton.UseVisualStyleBackColor = true;
-            this.DoSomethingButton.Click += new System.EventHandler(this.DoSomethingButton_Click);
+            this.button1.Location = new System.Drawing.Point(82, 249);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // Failsafe
+            // button2
             // 
-            this.Failsafe.AutoSize = true;
-            this.Failsafe.Location = new System.Drawing.Point(144, 32);
-            this.Failsafe.Name = "Failsafe";
-            this.Failsafe.Size = new System.Drawing.Size(62, 17);
-            this.Failsafe.TabIndex = 1;
-            this.Failsafe.Text = "Failsafe";
-            this.Failsafe.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(138, 249);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 50);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // DateTimePicker
+            // button3
             // 
-            this.DateTimePicker.Location = new System.Drawing.Point(212, 31);
-            this.DateTimePicker.Name = "DateTimePicker";
-            this.DateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.DateTimePicker.TabIndex = 2;
+            this.button3.Location = new System.Drawing.Point(194, 249);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(50, 50);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "3";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // button4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Button";
+            this.button4.Location = new System.Drawing.Point(82, 193);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(50, 50);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "4";
+            this.button4.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // button5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(144, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Checkbox";
+            this.button5.Location = new System.Drawing.Point(138, 193);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(50, 50);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "5";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // button6
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(212, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Date";
+            this.button6.Location = new System.Drawing.Point(194, 193);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(50, 50);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "6";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // PictureBox
+            // button7
             // 
-            this.PictureBox.Location = new System.Drawing.Point(13, 100);
-            this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(399, 223);
-            this.PictureBox.TabIndex = 6;
-            this.PictureBox.TabStop = false;
+            this.button7.Location = new System.Drawing.Point(82, 137);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(50, 50);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "7";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // SecretCodeTextBox
+            // button8
             // 
-            this.SecretCodeTextBox.Location = new System.Drawing.Point(13, 58);
-            this.SecretCodeTextBox.Name = "SecretCodeTextBox";
-            this.SecretCodeTextBox.Size = new System.Drawing.Size(399, 20);
-            this.SecretCodeTextBox.TabIndex = 7;
-            this.SecretCodeTextBox.TextChanged += new System.EventHandler(this.SecretCodeTextBox_TextChanged);
+            this.button8.Location = new System.Drawing.Point(138, 137);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(50, 50);
+            this.button8.TabIndex = 7;
+            this.button8.Text = "8";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(194, 137);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(50, 50);
+            this.button9.TabIndex = 8;
+            this.button9.Text = "9";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button0
+            // 
+            this.button0.Location = new System.Drawing.Point(138, 305);
+            this.button0.Name = "button0";
+            this.button0.Size = new System.Drawing.Size(50, 50);
+            this.button0.TabIndex = 9;
+            this.button0.Text = "0";
+            this.button0.UseVisualStyleBackColor = true;
+            // 
+            // DisplayBox
+            // 
+            this.DisplayBox.Location = new System.Drawing.Point(13, 13);
+            this.DisplayBox.Multiline = true;
+            this.DisplayBox.Name = "DisplayBox";
+            this.DisplayBox.Size = new System.Drawing.Size(343, 52);
+            this.DisplayBox.TabIndex = 10;
+            this.DisplayBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // buttonMultiply
+            // 
+            this.buttonMultiply.Location = new System.Drawing.Point(250, 137);
+            this.buttonMultiply.Name = "buttonMultiply";
+            this.buttonMultiply.Size = new System.Drawing.Size(50, 50);
+            this.buttonMultiply.TabIndex = 11;
+            this.buttonMultiply.Text = "*";
+            this.buttonMultiply.UseVisualStyleBackColor = true;
+            this.buttonMultiply.Click += new System.EventHandler(this.buttonMultiply_Click);
+            // 
+            // buttonAddition
+            // 
+            this.buttonAddition.Location = new System.Drawing.Point(250, 193);
+            this.buttonAddition.Name = "buttonAddition";
+            this.buttonAddition.Size = new System.Drawing.Size(50, 50);
+            this.buttonAddition.TabIndex = 12;
+            this.buttonAddition.Text = "+";
+            this.buttonAddition.UseVisualStyleBackColor = true;
+            this.buttonAddition.Click += new System.EventHandler(this.buttonAddition_Click);
+            // 
+            // buttonEquals
+            // 
+            this.buttonEquals.Location = new System.Drawing.Point(250, 305);
+            this.buttonEquals.Name = "buttonEquals";
+            this.buttonEquals.Size = new System.Drawing.Size(50, 50);
+            this.buttonEquals.TabIndex = 13;
+            this.buttonEquals.Text = "=";
+            this.buttonEquals.UseVisualStyleBackColor = true;
+            this.buttonEquals.Click += new System.EventHandler(this.buttonEquals_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 335);
-            this.Controls.Add(this.SecretCodeTextBox);
-            this.Controls.Add(this.PictureBox);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.DateTimePicker);
-            this.Controls.Add(this.Failsafe);
-            this.Controls.Add(this.DoSomethingButton);
+            this.ClientSize = new System.Drawing.Size(368, 375);
+            this.Controls.Add(this.buttonEquals);
+            this.Controls.Add(this.buttonAddition);
+            this.Controls.Add(this.buttonMultiply);
+            this.Controls.Add(this.DisplayBox);
+            this.Controls.Add(this.button0);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,14 +201,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Button DoSomethingButton;
-        private System.Windows.Forms.CheckBox Failsafe;
-        private System.Windows.Forms.DateTimePicker DateTimePicker;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox PictureBox;
-        private System.Windows.Forms.TextBox SecretCodeTextBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button0;
+        private System.Windows.Forms.TextBox DisplayBox;
+        private System.Windows.Forms.Button buttonMultiply;
+        private System.Windows.Forms.Button buttonAddition;
+        private System.Windows.Forms.Button buttonEquals;
     }
 }
 

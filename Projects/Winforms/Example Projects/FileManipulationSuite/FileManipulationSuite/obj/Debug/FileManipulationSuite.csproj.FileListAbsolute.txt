@@ -1,0 +1,10 @@
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\bin\Debug\FileManipulationSuite.exe.config
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\bin\Debug\FileManipulationSuite.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\bin\Debug\FileManipulationSuite.pdb
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\obj\Debug\FileManipulationSuite.csprojAssemblyReference.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\obj\Debug\FileManipulationSuite.Form1.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\obj\Debug\FileManipulationSuite.Properties.Resources.resources
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\obj\Debug\FileManipulationSuite.csproj.GenerateResource.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\obj\Debug\FileManipulationSuite.csproj.CoreCompileInputs.cache
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\obj\Debug\FileManipulationSuite.exe
+C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\Winforms\Example Projects\FileManipulationSuite\FileManipulationSuite\obj\Debug\FileManipulationSuite.pdb
