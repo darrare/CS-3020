@@ -21,6 +21,7 @@ namespace MessagingApp
         int port;
         IPAddress ipAddress;
         IPAddress subnetIP;
+
         public ConnectionScreen()
         {
             port = rand.Next(5000, 6000);
