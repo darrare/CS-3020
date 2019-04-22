@@ -40,7 +40,7 @@ namespace AuctioneerApp
         {
             form = new HostForm();
             form.Show();
-            address = IPAddress.Parse("127.0.0.1");
+            address = IPAddress.Parse("10.0.0.66");
             listener = new TcpListener(address, 5050);
             Task t = Task.Factory.StartNew(() => ListenForNewConnections());
         }

@@ -26,7 +26,7 @@ namespace AuctioneerApp
         {
             form = new ClientForm();
             form.Show();
-            server = new TcpClient("127.0.0.1", 5050);
+            server = new TcpClient("10.0.0.66", 5050);
             Task t = Task.Factory.StartNew(() => ListenToServer());
         }
 
