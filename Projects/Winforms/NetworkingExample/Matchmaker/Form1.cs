@@ -11,6 +11,11 @@ using System.Net.Sockets;
 using System.Net;
 using System.Threading;
 
+/// <summary>
+/// The variable matchmakerIP is obviously what it is. The main host is stored here.
+/// 
+/// Run the program with just one matchmaker. It will then connect every pair of clients together and forget about them.
+/// </summary>
 namespace Matchmaker
 {
     public partial class Form1 : Form

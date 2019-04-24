@@ -10,6 +10,12 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 
+/// <summary>
+/// First real line in Button_OpenConnection_Click is where you put their IP Address.
+/// I recommend using a textbox for input and just have TextBox.Text there instead.
+/// 
+/// Both clients need to click Open Connection to start the connection. Afterwards pings work as expected.
+/// </summary>
 namespace ClientClient
 {
     public partial class Form1 : Form

@@ -10,6 +10,12 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 
+/// <summary>
+/// First real line in Button_SendPing_Click is where you put their IP Address.
+/// I recommend using a textbox for input and just have TextBox.Text there instead.
+/// 
+/// One host starts the host, and many clients can connect to it. Clients can each ping the host, and the host can simultaneously ping every client.
+/// </summary>
 namespace HostManyClients
 {
     public partial class Form1 : Form

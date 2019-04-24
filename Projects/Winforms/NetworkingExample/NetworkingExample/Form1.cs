@@ -10,6 +10,14 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 
+
+/// <summary>
+/// First real line in Button_SendPing_Click is where you put their IP Address.
+/// I recommend using a textbox for input and just have TextBox.Text there instead.
+/// 
+/// Only one client needs to start the listener. They are the host.
+/// The other client just needs to send pings to test.
+/// </summary>
 namespace HostClient
 {
     public partial class Form1 : Form
