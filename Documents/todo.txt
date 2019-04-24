@@ -1,2 +1,0 @@
-Environment.CurrentDirectory < AppDomain.CurrentDomain.BaseDirectory
-LINQ slides & lab. Students develop their own LINQ problems as side-homework (due 12pm Thursday) to compile that weeks homework assignment due following Thursday night instead of Monday.
