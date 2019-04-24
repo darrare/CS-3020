@@ -18,6 +18,8 @@ namespace Matchmaker
         List<TcpClient> connections = new List<TcpClient>();
         TcpClient connection;
 
+        string matchmakerIP = "10.0.0.66";
+
         public Form1()
         {
             InitializeComponent();
@@ -47,9 +49,9 @@ namespace Matchmaker
                     {
                         SendMessage(c, "Match found. Sending match info.");
                     }
-                    SendMessage(connections[0], "IP" + ((IPEndPoint)connections[1].Client.RemoteEndPoint).Address.ToString());
-                    Thread.Sleep(100);
-                    SendMessage(connections[1], "IP" + ((IPEndPoint)connections[0].Client.RemoteEndPoint).Address.ToString());
+                    SendMessage(connections[0], "IP0" + ((IPEndPoint)connections[1].Client.RemoteEndPoint).Address.ToString());
+                    Thread.Sleep(1000);
+                    SendMessage(connections[1], "IP1" + ((IPEndPoint)connections[0].Client.RemoteEndPoint).Address.ToString());
                     connections.Clear();
                 }
                 else
@@ -62,7 +64,7 @@ namespace Matchmaker
         private void Button_FindMatch_Click(object sender, EventArgs e)
         {
             if (connection == null)
-                connection = new TcpClient(Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToString(), 5555);
+                connection = new TcpClient(matchmakerIP, 5555);
 
             Task.Factory.StartNew(() => ListenForPacket(connection));
             SendMessage(connection, "Client connected to matchmaker");
@@ -82,23 +84,25 @@ namespace Matchmaker
                 }
                 else if (result.Substring(0, 2) == "IP")
                 {
-                    string ipAddress = result.Substring(2);
-                    try
-                    {
-                        connection = new TcpClient(ipAddress, 5555);
-                    }
-                    catch
+                    string ipAddress = result.Substring(3);
+                    char action = result[2];
+                    if (action == '0')
                     {
                         AddToMessageBox("Waiting for match with listener.");
-                        TcpListener listener = new TcpListener(IPAddress.Parse(ipAddress), 5555);
+                        TcpListener listener = new TcpListener(Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork), 5000);
                         listener.Start();
                         connection = await listener.AcceptTcpClientAsync();
                         await Task.Factory.StartNew(() => ListenForPacket(connection));
                         listener.Stop();
+                        AddToMessageBox("Found match.");
                         return;
                     }
-                    AddToMessageBox("Found match");
-                    await Task.Factory.StartNew(() => ListenForPacket(connection));
+                    else
+                    {
+                        connection = new TcpClient(ipAddress, 5000);
+                        AddToMessageBox("Found match");
+                        await Task.Factory.StartNew(() => ListenForPacket(connection));
+                    }
                 }
             }
         }
