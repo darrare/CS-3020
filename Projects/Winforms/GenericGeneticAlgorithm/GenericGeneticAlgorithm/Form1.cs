@@ -15,6 +15,7 @@ namespace GenericGeneticAlgorithm
         public Form1()
         {
             InitializeComponent();
+            new GeneticAlgorithm();
         }
     }
 }

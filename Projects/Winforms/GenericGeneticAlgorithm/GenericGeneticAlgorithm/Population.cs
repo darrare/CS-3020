@@ -10,20 +10,66 @@ namespace GenericGeneticAlgorithm
     {
         static Random Rand = new Random();
 
-        List<Chromosome> Chromosomes = new List<Chromosome>();
+        public List<Chromosome> Chromosomes = new List<Chromosome>();
 
         public int GeneCount { get; private set; } = 0;
         public int PopulationSize { get; private set; } = 0;
 
-        public int NumParentsToKeepEachIteration { get; private set; }
+        public int NumParentsToKeepEachIteration { get; private set; } = 0;
 
-        public Population(int geneCount, int populationSize)
+        /// <summary>
+        /// public constructor used to generate the first generation
+        /// </summary>
+        /// <param name="populationSize">Total size of the population
+        /// <para />(must be in the form of Size = X + Y where x = y(y-1)/2).
+        /// <para />Example: Set Y = 100, therefore X = 100(99)/2 = 4950. X + Y = 5050 where Y is the number of parents we keep per iteration.)
+        /// <para />Some valid values: 36, 136, 528, 2080</param>
+        /// <param name="defaultGenes">The set of default genes for the first generation</param>
+        /// <param name="maxDerivation">Percentage wise, how much can we deviate from the default genes values</param>
+        public Population(int populationSize, object[] defaultGenes, float maxDerivation)
         {
-            GeneCount = geneCount;
+            GeneCount = defaultGenes.Length;
             PopulationSize = populationSize;
             NumParentsToKeepEachIteration = CalculateNumParentsToKeepEachIteration(PopulationSize);
+            GenerateFirstGeneration(defaultGenes, maxDerivation);
         }
 
+        /// <summary>
+        /// Generates the first generation of the genetic algorithm
+        /// </summary>
+        /// <param name="defaultGenes">The set of default genes for the first generation</param>
+        /// <param name="maxDerivation">Percentage wise, how much can we deviate from the default genes values</param>
+        private void GenerateFirstGeneration(object[] defaultGenes, float maxDerivation)
+        {
+            for(int i = 0; i < PopulationSize; i++)
+            {
+                object[] newGenes = new object[GeneCount];
+                for (int j = 0; j < GeneCount; j++)
+                {
+                    newGenes[j] = defaultGenes[j];
+                    //Mutate gene based on type.
+                    if (newGenes[j] is float)
+                    {
+                        float val = Convert.ToSingle(newGenes[j]);
+                        newGenes[j] = val + val * ((Rand.NextDouble() * 2) - 1) * maxDerivation;
+                    }
+                    else if (newGenes[j] is int)
+                    {
+                        int val = (int)newGenes[j];
+                        //Floors all rounding errors
+                        newGenes[j] = val + val * ((Rand.NextDouble() * 2) - 1) * maxDerivation;
+                    }
+                }
+                Chromosomes.Add(new Chromosome(newGenes));
+            }
+        }
+
+        /// <summary>
+        /// Private constructor used in generating future generations
+        /// </summary>
+        /// <param name="geneCount">How many different heuristic variables are considered</param>
+        /// <param name="populationSize">Total size of the population</param>
+        /// <param name="chromosomes">Chromosomes generated from the previous generation</param>
         private Population(int geneCount, int populationSize, List<Chromosome> chromosomes)
         {
             GeneCount = geneCount;
@@ -39,23 +85,27 @@ namespace GenericGeneticAlgorithm
         /// <returns>The number of parents to keep each round</returns>
         private int CalculateNumParentsToKeepEachIteration(int total)
         {
-            for (int left = 1; left < total; left++)
+            for (int Y = 1; Y < total; Y++)
             {
-                int right = total - left;
-                int result = (left * (left - 1)) / 2;
-                if (right == result)
-                    return right;
-                else if (right < result)
+                int X = total - Y;
+                int result = (Y * (Y - 1)) / 2;
+                if (X == result)
+                    return Y;
+                else if (X < result)
                     throw new Exception("Invalid population size, must be in the form of Size = X + Y where x = y(y-1)/2). Example: Set Y = 100, therefore X = 100(99)/2 = 4950. X + Y = 5050 where Y is the number of parents we keep per iteration.");
             }
             throw new Exception("Total must be greater than 2");
         }
 
-        public void CalculateFitness(Func<Chromosome, float> fitnessAlgorithm)
+        /// <summary>
+        /// Runs through each chromosome to calculate its fitness against the provided fitness algorithm
+        /// </summary>
+        /// <param name="fitnessAlgorithm">The fitness algorithm</param>
+        public void CalculateFitness(Func<object[], float> fitnessAlgorithm)
         {
             foreach(Chromosome c in Chromosomes)
             {
-                c.FitnessScore = fitnessAlgorithm(c);
+                c.FitnessScore = fitnessAlgorithm(c.Genes);
             }
         }
 
@@ -69,7 +119,7 @@ namespace GenericGeneticAlgorithm
             if (Chromosomes.Sum(t => t.FitnessScore) == 0)
                 throw new Exception("Must calculate fitness before selection");
 
-            Chromosomes = Chromosomes.OrderBy(t => t.FitnessScore).ToList();
+            Chromosomes = Chromosomes.OrderByDescending(t => t.FitnessScore).ToList();
             return new Population(GeneCount, PopulationSize, Chromosomes.Take(NumParentsToKeepEachIteration).ToList());
         }
 
@@ -134,21 +184,30 @@ namespace GenericGeneticAlgorithm
                         if (Rand.NextDouble() <= individualGeneSelectionChance)
                         {
                             //Mutate gene based on type.
-                            if (c.Genes[i] is float || c.Genes[i] is double)
+                            if (c.Genes[i] is float)
                             {
-                                double val = (double)c.Genes[i];
-                                c.Genes[i] = Rand.Next(0, 2) == 0 ? val + val * mutationPercentageMax : val - val * mutationPercentageMax;
+                                float val = Convert.ToSingle(c.Genes[i]);
+                                c.Genes[i] = val + val * ((Rand.NextDouble() * 2) - 1) * mutationPercentageMax;
                             }
                             else if (c.Genes[i] is int)
                             {
                                 int val = (int)c.Genes[i];
                                 //Floors all rounding errors
-                                c.Genes[i] = Rand.Next(0, 2) == 0 ? val + val * mutationPercentageMax : val - val * mutationPercentageMax;
+                                c.Genes[i] = val + val * ((Rand.NextDouble() * 2) - 1) * mutationPercentageMax;
                             }
                         }
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Calculates the difference between min and max values based on percentage.
+        /// </summary>
+        /// <returns>Percentage of max that the min is</returns>
+        public float CalculateConvergence()
+        {
+            return 1 - (Chromosomes.Min(t => t.FitnessScore) / Chromosomes.Max(t => t.FitnessScore));
         }
     }
 }
