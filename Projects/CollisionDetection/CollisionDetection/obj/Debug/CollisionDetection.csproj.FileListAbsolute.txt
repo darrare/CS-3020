@@ -8,3 +8,13 @@ C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CollisionDetection\Collis
 C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.csproj.CoreCompileInputs.cache
 C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.exe
 C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.pdb
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\bin\Debug\CollisionDetection.exe.config
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\bin\Debug\CollisionDetection.exe
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\bin\Debug\CollisionDetection.pdb
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.csprojAssemblyReference.cache
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.Form1.resources
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.Properties.Resources.resources
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.csproj.GenerateResource.cache
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.csproj.CoreCompileInputs.cache
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.exe
+D:\Repositories\CS 3020\Projects\CollisionDetection\CollisionDetection\obj\Debug\CollisionDetection.pdb

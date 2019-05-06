@@ -13,35 +13,7 @@ namespace CharacterBattle
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Player 1, what class do you choose? m,w,a?");
-            char choice = Console.ReadLine()[0];
-            switch(choice)
-            {
-                case 'm':
-                    player1 = new Mage(23);
-                    break;
-                case 'w':
-                    player1 = new Warrior(23);
-                    break;
-                case 'a':
-                    player1 = new Archer(23);
-                    break;
-            }
-
-            Console.WriteLine("Player 2, what class do you choose? m,w,a?");
-            choice = Console.ReadLine()[0];
-            switch (choice)
-            {
-                case 'm':
-                    player2 = new Mage(28);
-                    break;
-                case 'w':
-                    player2 = new Warrior(28);
-                    break;
-                case 'a':
-                    player2 = new Archer(28);
-                    break;
-            }
+            PickCharacters();
 
             PrintGame();
             bool p1Turn = player1.Priority <= player2.Priority;
@@ -51,7 +23,7 @@ namespace CharacterBattle
                 Console.WriteLine();
                 if (p1Turn)
                 {
-                    player1:
+                player1:
                     Console.WriteLine("Player 1, what do you choose to do?");
                     Console.WriteLine("1. Move and attack " + player1.GetMovementAttackDescription());
                     Console.WriteLine("2. Special " + player1.GetSpecialDescription());
@@ -67,7 +39,7 @@ namespace CharacterBattle
                             if (player1.Move(int.Parse(Console.ReadLine())))
                             {
                                 Console.WriteLine("You moved");
-                                Player1AttacKQuestion:
+                            Player1AttacKQuestion:
                                 Console.WriteLine("Would you like to attack? y/n");
                                 string input = Console.ReadLine();
                                 if (input[0] == 'y' || input[0] == 'Y')
@@ -109,7 +81,7 @@ namespace CharacterBattle
                 }
                 else
                 {
-                    player2:
+                player2:
                     Console.WriteLine("Player 2, what do you choose to do?");
                     Console.WriteLine("1. Move and attack " + player2.GetMovementAttackDescription());
                     Console.WriteLine("2. Special " + player2.GetSpecialDescription());
@@ -125,7 +97,7 @@ namespace CharacterBattle
                             if (player2.Move(int.Parse(Console.ReadLine())))
                             {
                                 Console.WriteLine("You moved");
-                                Player2AttacKQuestion:
+                            Player2AttacKQuestion:
                                 Console.WriteLine("Would you like to attack? y/n");
                                 string input = Console.ReadLine();
                                 if (input[0] == 'y' || input[0] == 'Y')
@@ -176,6 +148,39 @@ namespace CharacterBattle
             else if (player2.Health == 0)
             {
                 Console.WriteLine("Player 1 wins!");
+            }
+        }
+
+        private static void PickCharacters()
+        {
+            Console.WriteLine("Player 1, what class do you choose? m,w,a?");
+            char choice = Console.ReadLine()[0];
+            switch (choice)
+            {
+                case 'm':
+                    player1 = new Mage(23);
+                    break;
+                case 'w':
+                    player1 = new Warrior(23);
+                    break;
+                case 'a':
+                    player1 = new Archer(23);
+                    break;
+            }
+
+            Console.WriteLine("Player 2, what class do you choose? m,w,a?");
+            choice = Console.ReadLine()[0];
+            switch (choice)
+            {
+                case 'm':
+                    player2 = new Mage(28);
+                    break;
+                case 'w':
+                    player2 = new Warrior(28);
+                    break;
+                case 'a':
+                    player2 = new Archer(28);
+                    break;
             }
         }
 

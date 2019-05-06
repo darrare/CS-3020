@@ -7,3 +7,12 @@ C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaMana
 C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.pdb
 C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\obj\Debug\Interop.WMPLib.dll
 C:\Users\rdarras\Desktop\Repositories\CS-3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.csproj.ResolveComReference.cache
+D:\Repositories\CS 3020\Projects\MediaManagement\MediaManagement\bin\Debug\MediaManagement.exe.config
+D:\Repositories\CS 3020\Projects\MediaManagement\MediaManagement\bin\Debug\MediaManagement.exe
+D:\Repositories\CS 3020\Projects\MediaManagement\MediaManagement\bin\Debug\MediaManagement.pdb
+D:\Repositories\CS 3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.csprojAssemblyReference.cache
+D:\Repositories\CS 3020\Projects\MediaManagement\MediaManagement\obj\Debug\Interop.WMPLib.dll
+D:\Repositories\CS 3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.csproj.ResolveComReference.cache
+D:\Repositories\CS 3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.csproj.CoreCompileInputs.cache
+D:\Repositories\CS 3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.exe
+D:\Repositories\CS 3020\Projects\MediaManagement\MediaManagement\obj\Debug\MediaManagement.pdb
