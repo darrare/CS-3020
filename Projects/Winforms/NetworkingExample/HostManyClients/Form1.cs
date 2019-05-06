@@ -22,10 +22,42 @@ namespace HostManyClients
     {
         List<TcpClient> connections = new List<TcpClient>();
         TcpClient connection;
+
+        
         public Form1()
         {
+            var myList = new[]
+            {
+                new { MessageType = "INFO", IP = "127.0.0.1", NickName = "Ryan", Msg = ""},
+                new { MessageType = "INFO", IP = "127.0.0.1", NickName = "Bob", Msg = ""},
+                new { MessageType = "INFO", IP = "127.0.0.1", NickName = "Sally", Msg = ""},
+                new { MessageType = "INFO", IP = "127.0.0.1", NickName = "Jerry", Msg = ""},
+                new { MessageType = "INFO", IP = "127.0.0.1", NickName = "Kim", Msg = ""},
+            }.ToList();
+
+            SendMessage("CONNECTION", "");
+            SendMessage("MESSAGE", "Hi nerds");
+
+            string toSend = JsonConvert.SerializeObject(new NetworkMessage { MessageType = "INFO", IP = "127.0.0.1", NickName = "Ryan", Message = "Hi" });
+
             InitializeComponent();
             Label_LocalIP.Text = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToString();
+        }
+
+        public class NetworkMessage
+        {
+            public string MessageType { get; set; }
+            public string IP { get; set; }
+            public string NickName { get; set; }
+            public string Message { get; set; }
+        }
+
+        public void SendMessage(string messageType, string message)
+        {
+            string ip = "code to get IP here";
+            string nickName = "access some public variable here";
+
+            var anonType = new { MessageType = messageType, IP = ip, NickName = nickName, Msg = message };
         }
 
         private void AddToMessageBox(string s)
