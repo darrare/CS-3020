@@ -32,5 +32,10 @@ namespace Portfolio.Controllers
         {
             return View();
         }
+
+        public IActionResult SecurityCams()
+        {
+            return View();
+        }
     }
 }

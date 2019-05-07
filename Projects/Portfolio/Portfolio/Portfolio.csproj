@@ -17,15 +17,16 @@
     <Content Update="Views\Shared\_WebToolsLayout.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
-    <Content Update="Views\WebTools\Index - Copy %282%29.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\WebTools\Index - Copy %283%29.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
     <Content Update="Views\WebTools\FlockingSimulation.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\WebTools\SecurityCams.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DataTypes\" />
   </ItemGroup>
 
 </Project>

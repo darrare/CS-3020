@@ -46,7 +46,7 @@ body {
 
 /* Active/current link */
 .sidebar a.active {
-    background-color: #4CAF50;
+    background-color: #0F0;
     color: white;
 }
 
@@ -75,8 +75,7 @@ div.content {
         float: left;
     }
 
-    .sidebar h2
-    {
+    .sidebar h2 {
         display: none;
     }
 

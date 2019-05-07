@@ -15,14 +15,15 @@ namespace GenericGeneticAlgorithm
 
         public GeneticAlgorithm()
         {
-            float[] weights = new float[100];
-            float[] values = new float[100];
-            for (int i = 0; i < 100; i++)
+            int n = 10;
+            float[] weights = new float[n];
+            float[] values = new float[n];
+            for (int i = 0; i < n; i++)
             {
-                weights[i] = (float)(1 + rand.NextDouble() * 100);
-                values[i] = (float)(1 + rand.NextDouble() * 20);
+                weights[i] = (float)(1 + rand.NextDouble() * 1);
+                values[i] = (float)(1 + rand.NextDouble() * 1);
             }
-            Knapsack knapsack = new Knapsack(500, weights, values);
+            Knapsack knapsack = new Knapsack(10, weights, values);
             Population p = new Population(528, new object[] { 1.0f, 1.0f, 1.0f, 1.0f }, .5f);
 
             int index = 0;
