@@ -48,16 +48,20 @@ namespace Portfolio
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvc();
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //        "WebTools", "WebTools/{*index}",
+            //        defaults: new { controller = "WebTools", action = "Index" });
+            //    routes.MapRoute(
+            //        name: "default",
+            //        template: "{controller=HomeController}/{action=Index}/{id?}");
+            //});
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenericGeneticAlgorithm
+namespace GenericGeneticAlgorithm.Genetic_Algorithm
 {
     class Chromosome
     {

@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GenericGeneticAlgorithm.Problems;
+using GenericGeneticAlgorithm.Genetic_Algorithm;
 
 namespace GenericGeneticAlgorithm
 {
-    public partial class Form1 : Form
+    public partial class CSP_GeneticAlgorithm : Form
     {
-        public Form1()
+        public CSP_GeneticAlgorithm()
         {
             InitializeComponent();
             new GeneticAlgorithm();
