@@ -36,7 +36,7 @@ namespace Portfolio.RealTimeBackend
         {
             return ClientQueue.Count(t => t.Model.Role == Enums.Role.Tank) >= 1
                 && ClientQueue.Count(t => t.Model.Role == Enums.Role.Healer) >= 1
-                && ClientQueue.Count(t => t.Model.Role == Enums.Role.Damage) >= 3;
+                && ClientQueue.Count(t => t.Model.Role == Enums.Role.Damage) >= 1;
         }
 
         public static List<Client> FormTeam()
@@ -44,7 +44,7 @@ namespace Portfolio.RealTimeBackend
             List<Client> newTeam = new List<Client>();
             newTeam.Add(ClientQueue.First(t => t.Model.Role == Enums.Role.Tank));
             newTeam.Add(ClientQueue.First(t => t.Model.Role == Enums.Role.Healer));
-            newTeam.AddRange(ClientQueue.Where(t => t.Model.Role == Enums.Role.Damage).Take(3));
+            newTeam.AddRange(ClientQueue.Where(t => t.Model.Role == Enums.Role.Damage).Take(1));
             foreach (Client c in newTeam)
             {
                 ClientQueue.Remove(c);

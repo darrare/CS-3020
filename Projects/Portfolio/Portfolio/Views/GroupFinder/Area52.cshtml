@@ -20,8 +20,11 @@
 <p id="levelVerification" style="color: red; display:none"> Level is required</p>
 <p id="factionVerification" style="color: red; display:none"> Faction is required</p>
 <p id="nameVerification" style="color: red; display:none"> Name is required</p>
-<div id="Status">
 
+<div id="Status">
+    <p>Tanks in queue: @ClientManager.TankCount</p>
+    <p>Healers in queue: @ClientManager.HealerCount</p>
+    <p>DPS in queue: @ClientManager.DamageCount</p>
 </div>
 
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>

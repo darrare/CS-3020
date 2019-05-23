@@ -6,11 +6,7 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/CharacterRegistrat
 document.getElementById("registerButton").disabled = true;
 
 connection.on("TeamFormedReceived", function (message) {
-    document.getElementById("Status").innerHTML = "";
-
-    var p = document.createElement("p");
-    p.textContent = message;
-    document.getElementById("Status").appendChild(p);
+    document.getElementById("Status").innerHTML = message;
 });
 
 connection.on("RegistrationReceived", function (tanksInQueue, healersInQueue, dpsInQueue) {

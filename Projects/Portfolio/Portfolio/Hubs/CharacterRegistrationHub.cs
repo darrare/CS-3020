@@ -29,7 +29,8 @@ namespace Portfolio.Hubs
                 List<Client> team = ClientManager.FormTeam();
                 foreach (Client c in team)
                 {
-                    await Clients.Client(c.GUID).SendAsync("TeamFormedReceived", team.Aggregate("", (total, next) => total += next.Model.Name + ", " + next.Model.Level + " " + next.Model.Role.ToString() + " " + next.Model.Class.ToString() + "\n"));
+                    string message =  team.Aggregate("", (total, next) => total += "<p>" + next.Model.Name + ", " + next.Model.Level + " " + next.Model.Role.ToString() + " " + next.Model.Class.ToString() + "</p>");
+                    await Clients.Client(c.GUID).SendAsync("TeamFormedReceived", message);
                 }
             }
         }
