@@ -10,11 +10,15 @@ namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("")]
+        [Route("Home")]
+        [Route("Index")]
         public IActionResult Index()
         {
             return View();
         }
 
+        [Route("Home/About")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -22,6 +26,7 @@ namespace Portfolio.Controllers
             return View();
         }
 
+        [Route("Home/Contact")]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
@@ -29,11 +34,13 @@ namespace Portfolio.Controllers
             return View();
         }
 
+        [Route("Home/Privacy")]
         public IActionResult Privacy()
         {
             return View();
         }
 
+        [Route("Home/Test")]
         public IActionResult Test()
         {
             return View();
